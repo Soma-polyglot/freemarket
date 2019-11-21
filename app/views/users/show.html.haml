@@ -1,21 +1,20 @@
-%main.l-container.clearfix
-  = render 'l-side'
-  .l-content
-    %section.mypage-user-icon
-      %a{ href: "#"}
-        %figure
-          = image_tag "//static.mercdn.net/images/member_photo_noimage_thumb.png", alt: "", width: 60,height: "60"
-        %h2.bold
-          ニックネーム
-        .mypage-number
-          %div
-            評価
-            %span.bold
-              0
-          %div
-            出品数
-            %span.bold
-              0
+
+.l-content
+  %section.mypage-user-icon
+    %a{ href: "#"}
+      %figure
+        = image_tag "//static.mercdn.net/images/member_photo_noimage_thumb.png", alt: "", width: 60,height: "60"
+      %h2.bold
+        ニックネーム
+      .mypage-number
+        %div
+          評価
+          %span.bold
+            0
+        %div
+          出品数
+          %span.bold
+            0
 
     %section.mypage-tab-container
       %ul.mypage-tab-container__tabs
@@ -33,10 +32,10 @@
             %a.tab-content__mypage-item__link(data-open="modal" data-modal="banner")
               %i.fa.fa-angle-right
               %figure
-                = image_tag "//static.mercdn.net/images/mercari_profile.png",alt: ""
+                = image_tag #メルカリのロゴ,alt: ""
               .tab-content__mypage-item__link__body
                 .tab-content__mypage-item__link__body__text
-                  明日、¥600割引お得チケットの有効期限が切れます！タップして詳細を確認しましょう。
+                  お知らせください
                 %time
                   %i.fa.fa-clock-o
                   %span
@@ -45,10 +44,10 @@
             %a.tab-content__mypage-item__link(data-open="modal" data-modal="banner")
               %i.fa.fa-angle-right
               %figure
-                = image_tag "//static.mercdn.net/images/mercari_profile.png",alt: ""
+                = image_tag #メルカリのロゴ,alt: ""
               .tab-content__mypage-item__link__body
                 .tab-content__mypage-item__link__body__text
-                  明日、¥600割引お得チケットの有効期限が切れます！タップして詳細を確認しましょう。
+                  お知らせしたいなあ
                 %time
                   %i.fa.fa-clock-o
                   %span
@@ -58,10 +57,10 @@
             %a.tab-content__mypage-item__link(data-open="modal" data-modal="banner")
               %i.fa.fa-angle-right
               %figure
-                = image_tag "//static.mercdn.net/images/mercari_profile.png",alt: ""
+                = image_tag #メルカリのロゴ,alt: ""
               .tab-content__mypage-item__link__body
                 .tab-content__mypage-item__link__body__text
-                  明日、¥600割引お得チケットの有効期限が切れます！タップして詳細を確認しましょう。
+                  お知らせなんてありませーん
                 %time
                   %i.fa.fa-clock-o
                   %span
@@ -71,18 +70,17 @@
             %a.tab-content__mypage-item__link(data-open="modal" data-modal="banner")
               %i.fa.fa-angle-right
               %figure
-                = image_tag "//static.mercdn.net/images/mercari_profile.png",alt: ""
+                = image_tag #メルカリのロゴ,alt: ""
               .tab-content__mypage-item__link__body
                 .tab-content__mypage-item__link__body__text
-                  明日、¥600割引お得チケットの有効期限が切れます！タップして詳細を確認しましょう。
+                  お知らせはありませーん
                 %time
                   %i.fa.fa-clock-o
                   %span
                     1 時間前
 
           %li
-            %h2.tab-content__mypage-item__link#
-              
+            %a.tab-content__mypage-item__link(data-open="modal" data-modal="banner")
               %i.fa.fa-angle-right
               %figure
                 = image_tag "//static.mercdn.net/images/mercari_profile.png",alt: ""

@@ -3,7 +3,7 @@
   %section.mypage-user-icon
     %a{ href: "#"}
       %figure
-        = image_tag "//static.mercdn.net/images/member_photo_noimage_thumb.png", alt: "", width: 60,height: "60"
+        = image_tag "user.png", alt: "", width: 60,height: "60"
       %h2.bold
         ニックネーム
       .mypage-number
@@ -20,19 +20,18 @@
       %ul.mypage-tab-container__tabs
         %li.active
           %h3
-            %a{ href: "#maypage-tab-notification"}(data-toggle="tab")
+            
               お知らせ
         %li
           %h3
-            %a{ href: "#mypage-tab-todo"}(data-toggle="tab")
               やることリスト
       .tab-content
         %ul#mypage-tab-notification.tab-content__mypage-item.tab-name.active
           %li
-            %a.tab-content__mypage-item__link(data-open="modal" data-modal="banner")
+            %a.tab-content__mypage-item__link
               %i.fa.fa-angle-right
               %figure
-                = image_tag #メルカリのロゴ,alt: ""
+                
               .tab-content__mypage-item__link__body
                 .tab-content__mypage-item__link__body__text
                   お知らせください
@@ -41,10 +40,10 @@
                   %span
                     1 時間前
           %li
-            %a.tab-content__mypage-item__link(data-open="modal" data-modal="banner")
+            %a.tab-content__mypage-item__link
               %i.fa.fa-angle-right
               %figure
-                = image_tag #メルカリのロゴ,alt: ""
+                
               .tab-content__mypage-item__link__body
                 .tab-content__mypage-item__link__body__text
                   お知らせしたいなあ
@@ -54,10 +53,10 @@
                     1 時間前
 
           %li
-            %a.tab-content__mypage-item__link(data-open="modal" data-modal="banner")
+            %a.tab-content__mypage-item__link
               %i.fa.fa-angle-right
               %figure
-                = image_tag #メルカリのロゴ,alt: ""
+                
               .tab-content__mypage-item__link__body
                 .tab-content__mypage-item__link__body__text
                   お知らせなんてありませーん
@@ -67,10 +66,10 @@
                     1 時間前
 
           %li
-            %a.tab-content__mypage-item__link(data-open="modal" data-modal="banner")
+            %a.tab-content__mypage-item__link
               %i.fa.fa-angle-right
               %figure
-                = image_tag #メルカリのロゴ,alt: ""
+                
               .tab-content__mypage-item__link__body
                 .tab-content__mypage-item__link__body__text
                   お知らせはありませーん
@@ -80,10 +79,10 @@
                     1 時間前
 
           %li
-            %a.tab-content__mypage-item__link(data-open="modal" data-modal="banner")
+            %a.tab-content__mypage-item__link
               %i.fa.fa-angle-right
               %figure
-                = image_tag "//static.mercdn.net/images/mercari_profile.png",alt: ""
+                
               .tab-content__mypage-item__link__body
                 %time
                   %i.fa.fa-clock-o
@@ -101,11 +100,9 @@
       %ul.mypage-tab-container__tabs
         %li.active
           %h3
-            %a{href: "#mypage-tab-transaction-now"}(data-toggle="tab")
               取引中
         %li
           %h3
-            %a{ href: "#mypage-tab-transaction-old"}(data-toggle="tab")
               過去の取引
 
       .tab-content

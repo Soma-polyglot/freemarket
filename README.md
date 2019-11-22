@@ -11,13 +11,8 @@
 |first_name_kanzi|string|null: false|
 |last_name_kana|string|null: false|
 |first_name_kana|string|null: false|
-|phone_number|integer|null: false, unique: true|
 |birthday|date|null: false|
-|prefecture|string|null: false|
-|city|string|null: false|
-|adress|string|null: false|
-|building|string|
-|telephone_number|integer|
+|phone_number|integer|null: false, unique: true|
 |profile|text|
 |image|text|
 
@@ -25,7 +20,22 @@
 - has_many :products
 - has_many :comments
 - has_many :likes
-- has_one :credits
+- has_one :credit
+- has_one :adress
+
+
+## adressesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|postal_code|intrger|null false|
+|prefecture|string|null: false|
+|city|string|null: false|
+|adress|string|null: false|
+|building|string|
+|telephone_number|integer|
+
+### Association
+- belongs_to :user
 
 
 ## creditsテーブル
@@ -37,7 +47,7 @@
 |security_code|integer|null: false|
 
 ### Association
-- has_one :user
+- belongs_to :user
 
 
 ## likesテーブル
@@ -48,6 +58,7 @@
 
 ### Association
 - belongs_to :user
+- belongs_to :product
 
 
 ## commentsテーブル

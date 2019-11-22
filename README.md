@@ -7,8 +7,8 @@
 |nickname|string|null: false|
 |email|string|null: false, unique: true|
 |password|string|null: false|
-|last_name_kanzi|string|null: false|
-|first_name_kanzi|string|null: false|
+|last_name|string|null: false|
+|first_name|string|null: false|
 |last_name_kana|string|null: false|
 |first_name_kana|string|null: false|
 |birthday|date|null: false|
@@ -27,6 +27,7 @@
 ## adressesテーブル
 |Column|Type|Options|
 |------|----|-------|
+|user_id|references|null: false, foreign_key: true|
 |postal_code|intrger|null false|
 |prefecture|string|null: false|
 |city|string|null: false|
@@ -66,7 +67,7 @@
 |------|----|-------|
 |user_id|references|null: false, foreign_key: true|
 |product_id|references|null: false, foreign_key: true|
-|text|text
+|text|text|null: false|
 
 ### Association
 - belongs_to :user
@@ -110,7 +111,6 @@
 ## categoriesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|product_id|references|null: false, foreign_key: true|
 |name|string|null: false|
 |ancestry|integer|
 
@@ -121,7 +121,6 @@
 ## brandsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|product_id|references|null: false, foreign_key: true|
 |name|string|
 
 ### Association

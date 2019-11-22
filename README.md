@@ -44,7 +44,8 @@
 |------|----|-------|
 |user_id|references|null: false, foreign_key: true|
 |number|integer|null: false, unique: true|
-|expiration_date|date|null: false|
+|expiration_year|integer|null: false|
+|expiration_month|integer|null: false|
 |security_code|integer|null: false|
 
 ### Association

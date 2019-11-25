@@ -1,0 +1,27 @@
+%nav.bread-crumbs
+    %ul.bread-crumbs__lists.last-child
+      %li.bread-crumbs__lists--part
+        %a.current-page{ href: "#" }
+          %span
+            メルカリ
+        = fa_icon "arrow-right", class: 'icon'
+
+-# .bread-crumbs                                                            作成したもの。多分まだgem入れてないから使えない
+-#     .bread-crumbs__lists
+-#       .bread-crumbs__lists--part{ itemscope: "" itemtype: "#"}
+-#         %a.current-page{ href: "#" itemprop="url" }
+-#           %span{ itemprop="title"}
+-#             メルカリ
+-#         = fa_icon "arrow-right", class: 'icon'
+
+-#   .breadcrumbs{itemscope: '', itemtype: '#'}                               参考にしたネットのパンくず
+-#     %ul
+-#       - @breadcrumbs.each.with_index(1) do |breadcrumb, i|
+-#         %li{itemprop: 'itemListElement', itemscope: '', itemtype: '#'}
+-#           - if breadcrumb.path.present?
+-#             %a{href: breadcrumb.path, itemprop: 'item'}
+-#               %span{:itemprop => 'name'}= breadcrumb.name
+-#             %meta{:itemprop => 'position', content: i}
+-#           - else
+-#             %span{:itemprop => 'name'}= breadcrumb.name
+-#             %meta{:itemprop => 'position', content: i}

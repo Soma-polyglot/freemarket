@@ -72,5 +72,8 @@ end
 # Add
 gem "haml-rails"
 gem 'devise'
-
+gem 'font-awesome-rails'
+gem 'owlcarousel-rails'
+gem 'active_hash'
+gem 'seed-fu'
 

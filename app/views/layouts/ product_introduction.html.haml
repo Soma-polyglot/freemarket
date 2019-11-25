@@ -1,0 +1,157 @@
+.body
+  .header
+    部分テンプレート
+    -# = render "部分テンプレート"
+
+  .item-field
+    .item-name
+      キプリング リュック
+    .item-content.clearfix
+      .item-content__photo 
+        .owl-carousel.owl-loaded.owl-drag
+          .owl-stage-outer
+            .owl-stage
+              .owl-item
+                .owl-item__inner
+                  %img.owl-lazy{ src: "#" }
+                    写真
+          .owl-nav.disable
+            .owl-prev
+              prev 
+            .owl-next
+              next        
+          .owl-dots
+            .owl-dot
+              %span
+              .owl-dot-inner
+                %img.small-photo{ src: "#" }
+            .owl-dot
+              %span
+              .owl-dot-inner
+                %img.small-photo{ src: "#" }
+            .owl-dot
+              %span
+              .owl-dot-inner
+                %img.small-photo{ src: "#" }
+            .owl-dot
+              %span
+              .owl-dot-inner
+                %img.small-photo{ src: "#" }
+      %table.item-content__detail
+        %tbody
+          %tr
+            %th 出品者
+            %td
+              %a{ href: "#"}購入者
+              .icons
+                .item-user-rating               
+                  = fa_icon "smile-o", class: "icon-good"
+                  %span 155
+                .item-user-rating               
+                  = fa_icon "meh-o", class: "icon-normal"
+                  %span 3
+                .item-user-rating               
+                  = fa_icon "frown-o", class: "icon-bad"
+                  %span 0
+          %tr
+            %th カテゴリー
+            %td
+              %a{ href: "#"}
+                %div レディース
+              %a{ href: "#"}
+                .item-category
+                  = fa_icon "arrow-right", class: "icon"
+                  スカート
+          %tr
+            %th ブランド
+            %td
+              %a{ href: "#"}
+                %div ブランド名
+          %tr
+            %th 商品のサイズ
+            %td free
+          %tr
+            %th 商品の状態
+            %td 良好
+          %tr
+            %th 配達料の負担
+            %td 送料込み（出品者負担）
+          %tr
+            %th 配送の方法
+            %td ヤマト
+          %tr
+            %th 配送元地域
+            %td 
+              %a{ href: "#"} 愛知県
+          %tr
+            %th 配送の目安
+            %td 2~3日で発送
+    .item-payment-box
+      %span.item-payment-box__price ¥2,300
+      %span.item-payment-box__tax (税込)
+      %span.item-payment-box__shipping-fee 送料込み
+    
+    %a.button{ href: "#", } 購入画面に進む
+    -# %a.item-action-text{ data-toggle: "#", data-url-sheme: "#", data-action: "#", data-key: "#", data-play-id: "#", data-adjust-url: "#", }
+    .item-description
+      .item-description__content 
+        "商品説明"
+        ■品 番： 
+        ■サイズ： 
+        ■重 さ： 
+        ■仕 様：
+        ■カラー：
+        ■付 属：
+        ケアカードあり
+
+    .item-button-opinion.clearfix
+      .item-button-opinion__left-side
+        %button.item-button-opinion__left-side--like{ type: "button", name: "like!" }
+          = fa_icon "heart", class: "item__button-like"
+          %span いいね!
+          %span.fade-in-down 8
+        .item-button-opinion__left-side--report
+          = fa_icon "flag-checkered", class: "item__button-report"
+          %span 不適切な商品の報告 
+          %input{ type: "hidden", name: "#", value: "#"}
+      .item-button-opinion__right-side
+        %a{ href: "#", target: "_blank" }
+          = fa_icon "lock"
+          %span あんしん・あんぜんへの取り組み
+
+  .comment
+    .comment__content
+      .comment__content--box
+        %form.comment-form{ action: "#", method: "#" }
+          %input{ type: "hidden", name: "#", value: "#" }
+          %p 相手のことを考えて丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+          %input{ type: "hidden", name: "#", value: "#" }
+          %textarea.input-field{ type: "text", name: "body", value: ""}
+          %button.comment-submit{ type: "submit" }
+            %span コメントする
+
+  .item-link
+    .item-link__prev
+      %a{ href: "#" }
+        = fa_icon "arrow-left", class: "prev"
+        【男女共に大人気】ターコイズデザインバングル
+    .item-link__next
+      %a{ href: "#" }
+        "コート"
+        = fa_icon "arrow-right", class: "next"
+
+  .social-media
+    .social-media__icons
+      %li.social-icon.facebook
+        %a.social-media__icons--link{ href: "#", target: "_blank" }
+          %i.fa.fa-facebook.fa-2x
+      %li.social-icon.twitter
+        %a.social-media__icons--link{ href: "#", target: "_blank" }
+          %i.fa.fa-twitter.fa-2x
+      %li.social-icon.pinterest
+        %a.social-media__icons--link{ href: "#", target: "_blank" }
+          %i.fa.fa-pinterest.fa-2x
+
+  .footer
+    部分テンプレート
+    -# = render "部分テンプレート"

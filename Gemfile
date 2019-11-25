@@ -76,4 +76,4 @@ gem 'font-awesome-rails'
 gem 'owlcarousel-rails'
 gem 'active_hash'
 gem 'seed-fu'
-
+gem 'gretel'

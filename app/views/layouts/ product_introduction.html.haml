@@ -10,8 +10,8 @@
       .item-content__photo 
         .owl-carousel.owl-loaded.owl-drag
           .owl-stage-outer
-            .owl-stage{ style: 'left: 0px', width: '2700px' }
-              .owl-item{ style: 'width: 300px' }
+            .owl-stage
+              .owl-item
                 .owl-item__inner
                   %img.owl-lazy{ src: "#" }
                     写真
@@ -144,15 +144,12 @@
     .social-media__icons
       %li.social-icon.facebook
         %a.social-media__icons--link{ href: "#", target: "_blank" }
-          -# = fa_icon "facebook", class: "icon"
           %i.fa.fa-facebook.fa-2x
       %li.social-icon.twitter
         %a.social-media__icons--link{ href: "#", target: "_blank" }
-          -# = fa_icon "twitter", class: "icon"
           %i.fa.fa-twitter.fa-2x
       %li.social-icon.pinterest
         %a.social-media__icons--link{ href: "#", target: "_blank" }
-          -# = fa_icon "pinterest", icon: "icon"
           %i.fa.fa-pinterest.fa-2x
 
   .footer

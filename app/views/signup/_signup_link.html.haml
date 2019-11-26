@@ -1,0 +1,19 @@
+.wrapper
+
+  = render "simple_header"
+
+  %main.signup__main
+    %h2.signup__main__header
+      = "新規会員登録"
+    .signup__main__content
+      .link__email
+        %i.fa.fa-envelope-o
+        = link_to "メールアドレスで登録する" 
+      .link__facebook
+        %i.fa.fa-facebook-official
+        = link_to "facebookで登録する" 
+      .link__google
+        %i.fa.fa-google
+        = link_to "Googleで登録する" 
+
+  = render "simple_footer"

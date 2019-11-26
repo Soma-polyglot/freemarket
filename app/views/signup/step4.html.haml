@@ -1,0 +1,33 @@
+.wrapper
+
+  .signup__step4
+    = render "signup_header"
+
+  %main.signup__main
+    %h2.signup__main__header
+      = "支払い方法"
+    = form_for "#" do |f|
+      .signup__main__content
+        .form__group
+          = f.label :number, "カード番号"
+          %sapn.form__require 必須
+          = f.text_field :content, class: "input__nomal", placeholder: "半角数字のみ"
+        .form__group
+          = f.label :number, "カード番号"
+          .cards-expire__wrap
+            = f.select :exp_month, [["--",nil],["01",1],["02",2],["03",3],["04",4],["05",5],["06",6],["07",7],["08",8],["09",9],["10",10],["11",11],["12",12]],{} 
+            %span.expire-text 月
+            = f.select :exp_year, [["--",nil],["19",2019],["20",2020],["21",2021],["22",2022],["23",2023],["24",2024],["25",2025],["26",2026],["27",2027],["28",2028],["29",2029]],{} 
+            %span.expire-text 年
+        .form__group
+          = f.label :security_code, "セキュリティコード"
+          %sapn.form__require 必須
+          = f.text_field :content, class: "input__nomal", placeholder: "カード背面もしくは3桁の番号"
+        .form__reason
+          = link_to "#" do
+            %i.fa.fa-question-circle
+            = "電話番号の確認が必要な理由"
+        .form__group
+          = f.submit "次へ進む",class: "signup__submit__btn"
+
+  = render "simple_footer"

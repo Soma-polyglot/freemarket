@@ -1,0 +1,50 @@
+.wrapper
+
+  .signup__step3
+    = render "signup_header"
+
+  %main.signup__main
+    %h2.signup__main__header
+      = "発送元・お届け先住所入力"
+    = form_for "#" do |f|
+      .signup__main__content
+        .form__group
+          = f.label :name, "お名前(全角)"
+          %sapn.form__require 必須
+          .form__group__name__kanzi
+            = f.text_field :content, class: "input__half", placeholder: "例)山田"
+            = f.text_field :content, class: "input__half", placeholder: "例)彩"
+        .form__group
+          = f.label :name_kana, "お名前カナ(全角)"
+          %sapn.form__require 必須
+          .form__group__name__kana
+            = f.text_field :content, class: "input__half", placeholder: "例)ヤマダ"
+            = f.text_field :content, class: "input__half", placeholder: "例)アヤ"
+        .form__group
+          = f.label :postal_code, "郵便番号"
+          %sapn.form__require 必須
+          = f.text_field :content, class: "input__nomal", placeholder: "例）1234567"
+        .form__group
+          = f.label :prefecture, "都道府県"
+          %sapn.form__require 必須
+          = f.text_field :content, class: "input__nomal", placeholder: "例）北海道"
+        .form__group
+          = f.label :city, "市区町村"
+          %sapn.form__require 必須
+          = f.text_field :content, class: "input__nomal", placeholder: "例）横浜市緑区"
+        .form__group
+          = f.label :adress, "番地"
+          %sapn.form__require 必須
+          = f.text_field :content, class: "input__nomal", placeholder: "例）青山1-1-1"
+        .form__group
+          = f.label :building, "建物名"
+          %sapn.form__any 任意
+          = f.text_field :content, class: "input__nomal", placeholder: "例）柳ビル103"
+        .form__group
+          = f.label :building, "電話"
+          %sapn.form__any 任意
+          = f.text_field :content, class: "input__nomal", placeholder: "例）柳ビル103"
+        .form__group
+          = f.submit "次へ進む",class: "signup__submit__btn"
+
+  = render "simple_footer"

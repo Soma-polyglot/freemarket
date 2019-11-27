@@ -1,0 +1,32 @@
+.wrapper
+
+  = render "simple_header"
+
+  %main.signin__main
+    %h2.signin__main__header
+      .signin__no__account
+        .form__group
+          %p
+            = "アカウントをお持ちではない方はこちら"
+        .signin__btn
+          = link_to "新規会員登録"
+    = form_for "#" do |f|
+      .signin__main__content
+        .signin__account
+          .link__facebook
+            %i.fa.fa-facebook-official
+            = link_to "facebookで登録する" 
+          .link__google
+            %i.fa.fa-google
+            = link_to "Googleで登録する" 
+          .form__group
+            = f.email_field :content, class: "input__nomal", placeholder: "メールアドレス"
+          .form__group
+            = f.text_field :content, class: "input__nomal", placeholder: "パスワード"
+          .form__group
+            = f.submit "次へ進む",class: "signin__submit__btn"
+          .password__forgot
+            = link_to "#" do
+              = "パスワードをお忘れの方"
+
+  = render "simple_footer"

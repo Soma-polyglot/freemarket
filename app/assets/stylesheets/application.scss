@@ -1,14 +1,12 @@
 @import "./reset";
-@import "./breadcrumbs";
-@import "./pagenotfound";
-@import "./product_introduction";
+@import "font-awesome";
+
+// config
 @import "config/colors";
 
-@import "modules/common";
-@import "modules/index";
-
-
-@import "modules/pager";
+// modules
+@import "modules/breadcrumbs";
+@import "modules/pagenotfound";
 @import "modules/sell-btn";
 @import "modules/signin";
 @import "modules/signup_header";
@@ -16,4 +14,17 @@
 @import "modules/simple_footer";
 @import "modules/simple_header";
 
-@import "font-awesome";
+// mrkm
+@import "mrkm/common";
+@import "mrkm/pager";
+
+// products
+@import "products/index";
+@import "products/new";
+@import "products/show";
+
+// users
+@import "users/mypage-nav";
+@import "users/mypage";
+@import "users/users_edit";
+@import "users/users";

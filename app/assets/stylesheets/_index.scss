@@ -254,13 +254,14 @@
     &__flame {
       position: relative;
       &__campaign {
-        height: 390px;left: 50%;
+        height: 390px;
+        left: 50%;
         margin-left: -50vw;
         position: relative;
         top: 0px;
         width: 100vw;
         overflow: hidden;
-        &__image {
+        .image {
           box-sizing: border-box;
           display: block;
           height: auto;

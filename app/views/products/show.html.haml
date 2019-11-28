@@ -12,15 +12,19 @@
           .owl-stage-outer
             .owl-stage
               .owl-item
-                .owl-item__inner
-                  %img.owl-lazy{ src: "#" }
+                .owl-item__inner.is-higher-height
+                  %img.owl-lazy{ src: "#", alt: "#" }
                     写真
           .owl-nav.disable
             .owl-prev
               prev 
             .owl-next
-              next        
+              next
           .owl-dots
+            .owl-dot
+              %span
+              .owl-dot-inner
+                %img.small-photo{ src: "#" }
             .owl-dot
               %span
               .owl-dot-inner
@@ -44,13 +48,13 @@
             %td
               %a{ href: "#"}購入者
               .icons
-                .item-user-rating               
+                .item-user-rating
                   = fa_icon "smile-o", class: "icon-good"
                   %span 155
-                .item-user-rating               
+                .item-user-rating
                   = fa_icon "meh-o", class: "icon-normal"
                   %span 3
-                .item-user-rating               
+                .item-user-rating
                   = fa_icon "frown-o", class: "icon-bad"
                   %span 0
           %tr
@@ -96,9 +100,9 @@
     .item-description
       .item-description__content 
         "商品説明"
-        ■品 番： 
-        ■サイズ： 
-        ■重 さ： 
+        ■品 番：
+        ■サイズ：
+        ■重 さ：
         ■仕 様：
         ■カラー：
         ■付 属：
@@ -107,10 +111,10 @@
     .item-button-opinion.clearfix
       .item-button-opinion__left-side
         %button.item-button-opinion__left-side--like{ type: "button", name: "like!" }
-          = fa_icon "heart", class: "item__button-like"
+          = fa_icon "heart-o", class: "item__button-like"
           %span いいね!
           %span.fade-in-down 8
-        .item-button-opinion__left-side--report
+        .item-button-opinion__left-side--report.clearfix
           = fa_icon "flag-checkered", class: "item__button-report"
           %span 不適切な商品の報告 
           %input{ type: "hidden", name: "#", value: "#"}
@@ -130,7 +134,7 @@
           %button.comment-submit{ type: "submit" }
             %span コメントする
 
-  .item-link
+  .item-link.clearfix
     .item-link__prev
       %a{ href: "#" }
         = fa_icon "arrow-left", class: "prev"
@@ -151,6 +155,9 @@
       %li.social-icon.pinterest
         %a.social-media__icons--link{ href: "#", target: "_blank" }
           %i.fa.fa-pinterest.fa-2x
+
+
+  = render 'shared/breadcrumbs'
 
   .footer
     部分テンプレート

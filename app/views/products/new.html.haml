@@ -1,0 +1,199 @@
+.body
+  
+  .contener
+
+    .header
+      .header__image
+        = image_tag "/assets/fmarket_logo_red.svg", class: "icon"
+
+    .main
+      .main__line
+        .main__line__contener
+          .main__line__contener__head
+            商品の情報を入力
+
+          .main__line__contener__form
+            .main__line__contener__form__upload
+              .main__line__contener__form__upload__top
+                出品画像
+              .main__line__contener__form__upload__under
+                最大10枚までアップロードできます
+              .main__line__contener__form__upload__image.clearfix
+                .main__line__contener__form__upload__image__container
+                  .main__line__contener__form__upload__image__container__sell
+                .main__line__contener__form__upload__image__box
+                  %input.drop{:multiple => "", :name => "image1", :style => "display: none;", :type => "file"}/
+                  %p.list
+                    ドラッグアンドドロップ
+                    またはクリックしてファイルをアップロード
+
+          .main__line__contener__item
+            .main__line__contener__item__name
+              商品名
+            .main__line__contener__item__name-box
+              %input.input-name{:placeholder => "商品名（必須 40文字まで)", :value => ""}/
+            
+            .main__line__contener__item__explain
+              商品の説明
+            .main__line__contener__item__explain-box
+              %textarea.input-explain{:placeholder => "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", :rows => "5"}
+          
+          .main__line__contener__item__detail.clearfix
+            %h3.left 商品の詳細
+            .main__line__contener__item__detail__right
+              .main__line__contener__item__detail__right__category
+                カテゴリー
+              .main__line__contener__item__detail__right__category-form
+                %select.select-category
+                  %option{:value => ""} ---
+                  %option{:value => "1"} レディース
+                  %option{:value => "2"} メンズ
+                  %option{:value => "3"} ベビー・キッズ
+                  %option{:value => "4"} インテリア・住まい・小物
+                  %option{:value => "5"} 本・音楽・ゲーム
+                  %option{:value => "1328"} おもちゃ・ホビー・グッズ
+                  %option{:value => "6"} コスメ・香水・美容
+                  %option{:value => "7"} 家電・スマホ・カメラ
+                  %option{:value => "8"} スポーツ・レジャー
+                  %option{:value => "9"} ハンドメイド
+                  %option{:value => "1027"} チケット
+                  %option{:value => "1318"} 自動車・オートバイ
+                  %option{:value => "10"} その他
+              
+              .main__line__contener__item__detail__right__state
+                商品の状態
+              .main__line__contener__item__detail__right__state-form
+                %select.select-state
+                  %option{:value => ""} ---
+                  %option{:value => "1"} 新品、未使用
+                  %option{:value => "2"} 未使用に近い
+                  %option{:value => "3"} 目立った傷や汚れなし
+                  %option{:value => "4"} やや傷や汚れあり
+                  %option{:value => "5"} 傷や汚れあり
+                  %option{:value => "6"} 全体的に状態が悪い
+
+          .main__line__contener__item__send.clearfix
+            %h3.left 配送について
+            .main__line__contener__item__send__right 
+              .main__line__contener__item__send__right__burden
+                配送料の負担
+              .main__line__contener__item__send__right__burden-form
+                %select.select-burden
+                  %option{:value => ""} ---
+                  %option{:value => "2"} 送料込み(出品者負担)
+                  %option{:value => "1"} 着払い(購入者負担)
+              
+              .main__line__contener__item__send__right__area
+                発送元の地域
+              .main__line__contener__item__send__right__area-form
+                %select.select-area
+                  %option{:value => ""} ---
+                  %option{:value => "1"} 北海道
+                  %option{:value => "2"} 青森県
+                  %option{:value => "3"} 岩手県
+                  %option{:value => "4"} 宮城県
+                  %option{:value => "5"} 秋田県
+                  %option{:value => "6"} 山形県
+                  %option{:value => "7"} 福島県
+                  %option{:value => "8"} 茨城県
+                  %option{:value => "9"} 栃木県
+                  %option{:value => "10"} 群馬県
+                  %option{:value => "11"} 埼玉県
+                  %option{:value => "12"} 千葉県
+                  %option{:value => "13"} 東京都
+                  %option{:value => "14"} 神奈川県
+                  %option{:value => "15"} 新潟県
+                  %option{:value => "16"} 富山県
+                  %option{:value => "17"} 石川県
+                  %option{:value => "18"} 福井県
+                  %option{:value => "19"} 山梨県
+                  %option{:value => "20"} 長野県
+                  %option{:value => "21"} 岐阜県
+                  %option{:value => "22"} 静岡県
+                  %option{:value => "23"} 愛知県
+                  %option{:value => "24"} 三重県
+                  %option{:value => "25"} 滋賀県
+                  %option{:value => "26"} 京都府
+                  %option{:value => "27"} 大阪府
+                  %option{:value => "28"} 兵庫県
+                  %option{:value => "29"} 奈良県
+                  %option{:value => "30"} 和歌山県
+                  %option{:value => "31"} 鳥取県
+                  %option{:value => "32"} 島根県
+                  %option{:value => "33"} 岡山県
+                  %option{:value => "34"} 広島県
+                  %option{:value => "35"} 山口県
+                  %option{:value => "36"} 徳島県
+                  %option{:value => "37"} 香川県
+                  %option{:value => "38"} 愛媛県
+                  %option{:value => "39"} 高知県
+                  %option{:value => "40"} 福岡県
+                  %option{:value => "41"} 佐賀県
+                  %option{:value => "42"} 長崎県
+                  %option{:value => "43"} 熊本県
+                  %option{:value => "44"} 大分県
+                  %option{:value => "45"} 宮崎県
+                  %option{:value => "46"} 鹿児島県
+                  %option{:value => "47"} 沖縄県
+                  %option{:value => "99"} 未定
+
+              .main__line__contener__item__send__right__date
+                発送までの日数
+              .main__line__contener__item__send__right__date-form
+                %select.select-date
+                  %option{:value => ""} ---
+                  %option{:value => "1"} 1~2日で発送
+                  %option{:value => "2"} 2~3日で発送
+                  %option{:value => "3"} 4~7日で発送
+          
+          .main__line__contener__item__price.clearfix
+            %h3.left 販売価格(300~9,999,999)
+            .main__line__contener__item__price__right 
+              .main__line__contener__item__price__right
+                .main__line__contener__item__price__right__top
+                  .main__line__contener__item__price__right__top__box.clearfix
+                    .main__line__contener__item__price__right__top__box__left
+                      価格
+                    .main__line__contener__item__price__right__top__box__right
+                      ¥
+                      .main__line__contener__item__price__right__top__box__right__box
+                        %input.input-price{:placeholder => "例）300", :value => ""}/
+                  
+                .main__line__contener__item__price__right__middle.clearfix
+                  .main__line__contener__item__price__right__middle__left
+                    販売手数料(10%)
+                  .main__line__contener__item__price__right__middle__right
+                    ー
+                
+                .main__line__contener__item__price__right__bottom.clearfix
+                  .main__line__contener__item__price__right__bottom__left
+                    販売利益
+                  .main__line__contener__item__price__right__bottom__right
+                    ー
+
+          .main__line__contener__item__final
+            .main__line__contener__item__final__top
+              = link_to "#", class: "blue" do
+                禁止されている出品
+              、
+              = link_to "#", class: "blue" do
+                行為
+              を必ずご確認ください。
+              またブランド品でシリアルナンバー等がある場合はご記載ください。
+              = link_to "#", class: "blue" do
+                偽ブランドの販売
+              は犯罪であり処罰される可能性があります。
+              また、出品をもちまして
+              = link_to "#", class: "blue" do
+                加盟店規約
+              に同意したことになります。
+
+            %button.red{:type => "submit"}出品する
+            
+            = link_to "#", class: "gray" do 
+              もどる
+ 
+      
+
+        
+      

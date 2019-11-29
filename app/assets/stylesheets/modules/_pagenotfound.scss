@@ -1,20 +1,6 @@
 .body {
   background-color: #f5f5f5;  
   
-  .header {
-    background-color: #518061;       //仮置き部分テンプレート
-    width: 1440px;
-    height: 100px;
-    display: block;
-    position: relative;
-    margin: 0;
-    padding: 0;
-    color: white;
-    font-weight: bold;
-    font-size: 50px;
-    text-align: center; 
-  }
-
   .page-not-found {
     margin: 40px auto;
     margin-bottom: 0;
@@ -89,14 +75,5 @@
       }
     }  
   }
-  .footer {
-    background-color: #518061;            //仮置き部分テンプレート
-    width: 1440px;
-    height: 650px;
-    display: block;
-    color: white;
-    font-size: bold;
-    text-align: center;
-    font-size: 90px;
-  }
+ 
 }

@@ -1,0 +1,28 @@
+.wrapper
+
+  .signup__step2
+    = render "signup_header"
+
+  %main.signup__main
+    %h2.signup__main__header
+      = "電話番号"
+    = form_for "#" do |f|
+      .signup__main__content
+        .form__group
+          = f.label :phone_number, "携帯電話の番号"
+          %sapn.form__require 必須
+          = f.text_field :content, class: "input__nomal", placeholder: "携帯電話の番号の入力"
+        .form__group
+          .identification__text
+            = "本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。"
+        .form__group
+          = f.submit "SMSを送信する",class: "signup__submit__btn"
+        .form__group
+          .identification__text
+            = "※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。"
+        .form__reason
+          = link_to "#" do
+            = "電話番号の確認が必要な理由"
+            %i.fa.fa-angle-right
+
+  = render "simple_footer"

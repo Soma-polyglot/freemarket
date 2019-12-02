@@ -169,6 +169,69 @@
 
 
 // --------------------- マイページ 支払い方法 --------------------- //
+.mypage__content .credit {
+  width: 100%;
+  background-color: white;
 
+  &__head {
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid gray;
+    color: black;
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+  
+
+  &__content {
+    width: 100%;
+    padding: 64px;
+
+    &__head {
+      width: 320px;
+      height: 16px;
+      margin: 0 auto;
+      color: black;
+      font-size: 16px;
+      line-height: 1;
+      font-weight: bold;
+    }
+
+    &__card {
+      width: 620px;
+      height: 117px;
+      padding: 24px 0;
+      border-bottom: 1px solid #eee;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &__link {
+        width: 320px;
+        height: 50px;
+        margin: 0 auto 8px;
+        background-color: red;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+
+        i {
+          color: white;
+          font-size: 16px;
+        }
+
+        span {
+          margin-left: 16px;
+          color: white;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
 
 // --------------------- マイページ ログアウト --------------------- //

@@ -25,6 +25,12 @@ ActiveRecord::Schema.define(version: 20191128092705) do
     t.index ["user_id"], name: "index_addresses_on_user_id", using: :btree
   end
 
+  create_table "brands", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "cards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id",     null: false
     t.string   "customer_id", null: false
@@ -32,11 +38,6 @@ ActiveRecord::Schema.define(version: 20191128092705) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.index ["user_id"], name: "index_cards_on_user_id", using: :btree
-
-  create_table "brands", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -44,14 +45,6 @@ ActiveRecord::Schema.define(version: 20191128092705) do
     t.integer  "ancestry"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "product_id",               null: false
-    t.text     "image",      limit: 65535, null: false
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
-    t.index ["product_id"], name: "index_images_on_product_id", using: :btree
   end
 
   create_table "product_images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -104,7 +97,6 @@ ActiveRecord::Schema.define(version: 20191128092705) do
 
   add_foreign_key "addresses", "users"
   add_foreign_key "cards", "users"
-  add_foreign_key "images", "products"
   add_foreign_key "product_images", "products"
   add_foreign_key "products", "brands"
   add_foreign_key "products", "categories"

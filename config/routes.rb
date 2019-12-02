@@ -7,8 +7,8 @@ Rails.application.routes.draw do
 
   root to: "signup#signup_link"
 
-  resources :cards
-  resources :signup do
+  resources :cards, only: [:new, :create]
+  resources :signup, only: [:create] do
     collection do
       get 'signup_link'
       get 'step1'

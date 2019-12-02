@@ -6,12 +6,18 @@
   %main.signup__main
     %h2.signup__main__header
       = "電話番号"
-    = form_for "#" do |f|
+    = form_for @user, url: step3_signup_index_path, method: :get do |f|
       .signup__main__content
         .form__group
           = f.label :phone_number, "携帯電話の番号"
           %sapn.form__require 必須
-          = f.text_field :content, class: "input__nomal", placeholder: "携帯電話の番号の入力"
+          = f.text_field :phone_number, class: "input__nomal", placeholder: "携帯電話の番号の入力"
+          - if @user.errors.any?
+            - unless @user.valid?
+              - if errors = @user.errors.full_messages_for(:phone_number.to_sym)
+                %ul
+                  - errors.each do |error|
+                    %li=error
         .form__group
           .identification__text
             = "本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。"

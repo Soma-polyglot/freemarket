@@ -6,14 +6,13 @@
   %main.signup__main
     %h2.signup__main__header
       = "完了"
-    = form_for "#" do |f|
-      .signup__main__content
-        .form__group
-          .form__finish__text
-            = "ありがとうございます。"
-            %br/
-            = "会員登録が完了しました。"
-          .form__group
-            = f.submit "メルカリをはじめる",class: "signup__submit__btn"
+    .signup__main__content
+      .form__group
+        .form__finish__text
+          = "ありがとうございます。"
+          %br/
+          = "会員登録が完了しました。"
+      .form__group
+        = link_to "メルカリをはじめる",destroy_user_session_path, method: :delete,class: "signup__submit__btn"
 
   = render "simple_footer"

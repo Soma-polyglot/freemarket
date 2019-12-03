@@ -1,4 +1,4 @@
-.wrapper
+.wrapper__signup
 
   = render "simple_header"
 
@@ -8,7 +8,7 @@
     .signup__main__content
       .link__email
         %i.fa.fa-envelope-o
-        = link_to "メールアドレスで登録する" 
+        = link_to "メールアドレスで登録する" ,step1_signup_index_path
       .link__facebook
         %i.fa.fa-facebook-official
         = link_to "facebookで登録する" 

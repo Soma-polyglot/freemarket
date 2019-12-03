@@ -84,3 +84,5 @@ gem 'recaptcha', require: "recaptcha/rails"
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-facebook'
+gem 'ancestry'
+

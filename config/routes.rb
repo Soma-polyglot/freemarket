@@ -12,8 +12,6 @@ Rails.application.routes.draw do
 
   root to: "products#index"
 
-  root to: "signup#signup_link"
-
   resources :cards, only: [:new, :create]
   resources :signup, only: [:create] do
     collection do

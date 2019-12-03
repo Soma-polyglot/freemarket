@@ -84,7 +84,7 @@
 |size|string|null: false|
 |brand_id|references|null: false, foreign_key: true|
 |status|string|null: false|
-|fee|integer|null: false|
+|fee|string|null: false|
 |area|string|null: false|
 |date|string|null: false|
 |price|integer|null: false|

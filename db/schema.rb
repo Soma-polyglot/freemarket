@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 20191128092705) do
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",       null: false
-    t.integer  "ancestry"
+    t.string   "ancestry"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(version: 20191128092705) do
     t.string   "size",                      null: false
     t.integer  "brand_id",                  null: false
     t.string   "status",                    null: false
-    t.integer  "fee",                       null: false
+    t.string   "fee",                       null: false
     t.string   "area",                      null: false
     t.string   "date",                      null: false
     t.integer  "price",                     null: false

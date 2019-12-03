@@ -80,3 +80,5 @@ gem 'gretel'
 gem 'payjp'
 gem 'pry-rails'
 gem 'dotenv-rails'
+gem 'ancestry'
+

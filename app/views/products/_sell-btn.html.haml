@@ -1,4 +1,4 @@
-.sell-btn
-  .sell-btn__head 出品
-  .fa.fa-camera
-    = link_to '仮' , new_product_path
+= link_to new_product_path do
+  .sell-btn
+    .sell-btn__head 出品
+    = fa_icon 'camera', class: 'fa'

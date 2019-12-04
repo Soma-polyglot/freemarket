@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
 
-  devise_for :users
+  devise_for :users, controllers: {
+    sessions: 'users/sessions',
+    registrations: "users/registrations",
+    omniauth_callbacks: 'users/omniauth_callbacks'
+  }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  resources :users
+
   resources :products
   resources :product_images, only: [:edit, :update, :destroy] do
     collection do
@@ -10,7 +14,7 @@ Rails.application.routes.draw do
     end
   end
 
-  root to: "products#index"
+  root to: "signup#signup_link"
 
   resources :cards, only: [:new, :create]
   resources :signup, only: [:create] do
@@ -20,6 +24,14 @@ Rails.application.routes.draw do
       get 'step2'
       get 'step3'
       get 'done' 
+    end
+  end
+
+  resources :purchase, only: [:index] do
+    collection do
+      get 'index', to: 'purchase#index'
+      post 'pay', to: 'purchase#pay'
+      get 'done', to: 'purchase#done'
     end
   end
 end

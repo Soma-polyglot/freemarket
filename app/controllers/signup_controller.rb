@@ -1,7 +1,7 @@
 class SignupController < ApplicationController
 
-  before_action :validates_step1, only: :step2 # step1のバリデーション
-  before_action :validates_step2, only: :step3 # step2のバリデーション
+  before_action :validates_step1, only: :step2 
+  before_action :validates_step2, only: :step3 
   before_action :validates_step3, only: :create
 
   def step1

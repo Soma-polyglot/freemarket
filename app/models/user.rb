@@ -22,7 +22,7 @@ class User < ApplicationRecord
   validates :phone_number,            presence: true, format: { with: /\A\d{10}$|^\d{11}\z/}
 
   def self.without_sns_data(auth)
-    user = User.where(email: auth.info.email).first
+    user = User.find_by(email: auth.info.email)
 
       if user.present?
         sns = SnsCredential.create(
@@ -44,7 +44,7 @@ class User < ApplicationRecord
     end
 
    def self.with_sns_data(auth, snscredential)
-    user = User.where(id: snscredential.user_id).first
+    user = User.find_by(id: snscredential.user_id)
     unless user.present?
       user = User.new(
         nickname: auth.info.name,

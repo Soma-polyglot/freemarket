@@ -1,6 +1,7 @@
 class PurchaseController < ApplicationController
   require 'payjp'
-
+  before_action :set_card
+  
   def index
     card = Card.find_by(user_id: current_user.id)
     #Cardテーブルは前回記事で作成、テーブルからpayjpの顧客IDを検索
@@ -26,4 +27,12 @@ class PurchaseController < ApplicationController
   )
   redirect_to action: 'done' #完了画面に移動
   end
+
+
+  private
+
+  def set_card
+    @card = Card.find_by(user_id: current_user.id) if Card.where(user_id: current_user.id).present?
+  end
+
 end

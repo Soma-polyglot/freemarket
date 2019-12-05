@@ -1,6 +1,6 @@
 .index
   
-  .header
+  = render "shared/productsindexheader"
 
     .main-header
       .main-header__top
@@ -69,135 +69,20 @@
             .second__flame__item__box__top__right
               新着アイテム
             .second__flame__item__box__top__left
-              もっと見る　＞
-            
+
+              もっと見る ＞
           .second__flame__item__box__bottom
             .second__flame__item__box__bottom__flame
-              .second__flame__item__box__bottom__flame__line
+              %a.second__flame__item__box__bottom__flame__line{ href: "/products/1", method: "Get"}
+                
+                .second__flame__item__box__bottom__flame__line__image
+                  .second__flame__item__box__bottom__flame__line__image__price
+    
                 .second__flame__item__box__bottom__flame__line__detail
                   .second__flame__item__box__bottom__flame__line__detail__content
                     紹介
-                .second__flame__item__box__bottom__flame__line__image
-                  .second__flame__item__box__bottom__flame__line__image__price
           = render partial: 'sell-btn'
-  .advertisement
-    .advertisement__content
-      .advertisement__content__right
-        .advertisement__content__right__top
-          スマホでかんたんフリマアプリ
-        .advertisement__content__right__middle
-          今すぐ無料ダウンロード！
-        .advertisement__content__right__bottom
-          %li.list
-            = image_tag "/assets/logo_red.svg", class: "icon1"
-            = image_tag "/assets/apple.svg", class: "icon2"
-            = image_tag "/assets/googleplay.png", class: "icon3"
-      .advertisement__content__left
-        = image_tag "/assets/メルカリ.png", class: "icon1"
-  .footer
-    .footer__top 
-      .footer__top__1
-        .footer__top__1__about
-          フリマについて
-        .footer__top__1__content
-          %li.list
-            = link_to '#', class: "write" do
-              会社概要（運営会社）
-          %li.list
-            = link_to '#', class: "write" do
-              採用情報
-          %li.list
-            = link_to '#', class: "write" do
-              プレスリリース
-          %li.list
-            = link_to '#', class: "write" do
-              公式ブログ
-          %li.list
-            = link_to '#', class: "write" do
-              フリマロゴ利用ガイドライン
-          %li.logo1
-            %i.fa.fa-twitter.fa-3x{ class: "icon"}
-            
-          %li.logo2
-            %i.fa.fa-facebook.fa-3x{ class: "icon"}            
-
-      
-      .footer__top__2
-        .footer__top__2__help-guide
-          ヘルプ＆ガイド
-        .footer__top__2__content
-          %li.list
-            = link_to '#', class: "write" do
-              フリマガイド
-          %li.list
-            = link_to '#', class: "write" do
-              らくらくフリマ便
-          %li.list
-            = link_to '#', class: "write" do
-              ゆうゆうフリマ便
-          %li.list
-            = link_to '#', class: "write" do
-              大型フリマ便
-          %li.list
-            = link_to '#', class: "write" do
-              車体取引ガイド
-          %li.list
-            = link_to '#', class: "write" do
-              フリマあんしん・あんぜん宣言！
-          %li.list
-            = link_to '#', class: "write" do
-              偽ブランド品撲滅への取り組み
-          %li.list
-            = link_to '#', class: "write" do
-              フリマボックス
-      
-      .footer__top__3
-        .footer__top__3__privacy-agreement
-          プライバシーと利用規約
-        .footer__top__3__box.clearfix
-          .footer__top__3__box__content-left
-            .footer__top__3__box__content-left__1
-              %li.list
-                = link_to '#', class: "write" do
-                  プライバシーポリシー
-              %li.list
-                = link_to '#', class: "write" do
-                  フリマ利用規約
-              %li.list
-                = link_to '#', class: "write" do
-                  あんしんスマホサポート制度に関する利用特約
-              %li.list
-                = link_to '#', class: "write" do
-                  コンプライアンスポリシ
-          
-          .footer__top__3__box__content-right
-            .footer__top__3__box__content-right__1
-              %li.list
-                = link_to '#', class: "write" do
-                  個人データの安全管理に係る基本方針
-              %li.list
-                = link_to '#', class: "write" do
-                  特定商取引に関する表記
-              %li.list
-                = link_to '#', class: "write" do
-                  資金決済法に基づく表示
-              %li.list
-                = link_to '#', class: "write" do
-                  法令順守と犯罪抑止のために
-      
-      .footer__top__4
-        .footer__top__4__country
-          国
-        .footer__top__4__content
-          %li.list
-            = link_to '#', class: "write" do
-              日本
-          %li.list
-            = link_to '#', class: "write" do
-              United States
-
-    .footer__bottom
-      .footer__bottom__right
-        = image_tag "/assets/fmarket_logo_white.svg", class: "icon"
-      .footer__bottom__center
-        © 2019 Freemarket
+                    
+  = render 'shared/productsindexadvertisement'
+  
+  = render 'shared/productsindexfooter'

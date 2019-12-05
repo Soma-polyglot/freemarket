@@ -6,15 +6,16 @@ Rails.application.routes.draw do
     omniauth_callbacks: 'users/omniauth_callbacks'
   }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  resources :users
+
+  root to: "products#index"
+  resources :users, only: [:show]
+  
   resources :products
   resources :product_images, only: [:edit, :update, :destroy] do
     collection do
       post :upload
     end
   end
-
-  root to: "products#index"
 
   resources :cards, only: [:new, :create]
   resources :signup, only: [:create] do

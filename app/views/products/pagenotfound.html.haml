@@ -1,5 +1,7 @@
-.body
-  -# render
+.not
+  
+  = render "shared/productsindexheader/" 
+
   .page-not-found.clearfix
     .page-not-found__content
       .error404
@@ -18,5 +20,8 @@
             スマホで簡単フリマアプリ
             Fmarket
           = image_tag "logo_white.svg", class: "fmarket-app", alt: "Download fmarket Now"
-  -# render
+  
+  = render 'shared/productsindexadvertisement'
+  = render 'shared/productsindexfooter'
+  = render partial: 'sell-btn'
   

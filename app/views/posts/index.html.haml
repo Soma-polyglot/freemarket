@@ -1,6 +1,8 @@
 .wrapper
-  = render partial: 'shared/chat-side'
-  .container
+  = render "shared/productsindexheader/" 
+  = render 'shared/breadcrumbs'
+
+  .container.clearfix
     .container-main
       .mypage-title
         .title
@@ -13,7 +15,6 @@
         .text-right
           .p
           = link_to "本人確認書類のアップロードについて>", method: :get, class: 'title'
-          .fa-angle-right
         .form-group
           .m
             お名前
@@ -59,4 +60,9 @@
         .text-right
           .p
           = link_to "本人情報の登録について>", method: :get, class: 'title'
-  .app-banner
+
+    -# = render "mypage/mypage-nav"
+
+  = render 'shared/productsindexadvertisement'
+  = render 'shared/productsindexfooter'
+  = render "products/sell-btn"

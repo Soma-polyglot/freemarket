@@ -114,7 +114,7 @@
       - if @product.previous.present?
         = fa_icon "arrow-left", class: "prev"
         = link_to product_path(@product.previous) do
-          = @product.previous.name       
+          = @product.previous.name
     .item-link__next
       - if @product.next.present?
         = link_to product_path(@product.next) do

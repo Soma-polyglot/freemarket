@@ -38,6 +38,7 @@
         vertical-align: top;
       }
       .input__nomal{
+        box-sizing: border-box;
         width: 100%;
         margin: 8px 0 0;
         height: 48px;
@@ -49,6 +50,7 @@
         font-size: 16px;
       }
       .input__half{
+        box-sizing: border-box;
         margin: 8px 0 0;
         width: calc(50% - 6px);
         height: 48px;
@@ -77,6 +79,17 @@
         margin: 50px 0;
         text-align: center;
       }
+      ul{
+        color: red;
+        li{
+          margin-top: 5px;
+        }
+      }
+      img{
+        margin-top: 5px;
+        width: 35px;
+        height: 25px;
+      }
     }
     .precautions{
       margin: 8px 0 0;
@@ -89,12 +102,15 @@
       text-align: center;
     }
     .signup__submit__btn{
+      display: block;
+      text-align: center;
       background: #ea352d;
       border: 1px solid #ea352d;
       color: #fff;
       width: 100%;
       line-height: 48px;
       font-size: 14px;
+      text-decoration: none;
     }
     .form__reason{
       margin: 24px 0 0;
@@ -178,6 +194,7 @@ body{
   font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
 }
 
-.wrapper{
+.wrapper__signup{
+  min-height: 100vh;
   background: #f5f5f5;
 }

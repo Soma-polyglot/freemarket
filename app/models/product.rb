@@ -5,4 +5,15 @@ class Product < ApplicationRecord
   belongs_to :user
   belongs_to :category
   belongs_to :brand
+
+  def previous
+    Product.where("id < ?", self.id).order("id DESC").first
+  end
+ 
+  def next
+    Product.where("id > ?", self.id).order("id ASC").first
+  end
+
+ 
+
 end

@@ -1,50 +1,27 @@
 .body
-    -# = render "部分テンプレート"
-
+  = render "shared/productsindexheader/" 
   .item-field
     .item-name
-      キプリング リュック
+      = @product.name
     .item-content.clearfix
-      .item-content__photo 
+      .item-content__photo
         .owl-carousel.owl-loaded.owl-drag
           .owl-stage-outer
             .owl-stage
               .owl-item
-                .owl-item__inner.is-higher-height
-                  %img.owl-lazy{ src: "#", alt: "#" }
-                    写真
-          .owl-nav.disable
-            .owl-prev
-              prev 
-            .owl-next
-              next
+                .owl-item__inner
+                  - @product.product_images.each do |image|
+                    = image_tag "#{image.image}", class: "owl-lazy", alt: "#{@product.name}"
           .owl-dots
-            .owl-dot
-              %span
-              .owl-dot-inner
-                %img.small-photo{ src: "#" }
-            .owl-dot
-              %span
-              .owl-dot-inner
-                %img.small-photo{ src: "#" }
-            .owl-dot
-              %span
-              .owl-dot-inner
-                %img.small-photo{ src: "#" }
-            .owl-dot
-              %span
-              .owl-dot-inner
-                %img.small-photo{ src: "#" }
-            .owl-dot
-              %span
-              .owl-dot-inner
-                %img.small-photo{ src: "#" }
+            - @product.product_images.each do |image|
+              = image_tag "#{image.image}", class: "owl-dot", alt: "#{@product.name}"
       %table.item-content__detail
         %tbody
           %tr
             %th 出品者
             %td
-              %a{ href: "#"}購入者
+              %a{ href: "#"}
+                = @product.user.nickname
               .icons
                 .item-user-rating
                   = fa_icon "smile-o", class: "icon-good"
@@ -59,53 +36,53 @@
             %th カテゴリー
             %td
               %a{ href: "#"}
-                %div レディース
+                %div
+                  -# = @product.category.ancestry
               %a{ href: "#"}
                 .item-category
                   = fa_icon "arrow-right", class: "icon"
-                  スカート
+                  = @product.category.name
           %tr
             %th ブランド
             %td
               %a{ href: "#"}
-                %div ブランド名
+                %div 
+                  = @product.brand.name
           %tr
             %th 商品のサイズ
-            %td free
+            %td 
+              = @product.size
           %tr
             %th 商品の状態
-            %td 良好
+            %td 
+              = @product.status
           %tr
             %th 配達料の負担
-            %td 送料込み（出品者負担）
+            %td 
+              = @product.fee
           %tr
             %th 配送の方法
             %td ヤマト
           %tr
             %th 配送元地域
             %td 
-              %a{ href: "#"} 愛知県
+              %a{ href: "#"} 
+                = @product.area
           %tr
             %th 配送の目安
-            %td 2~3日で発送
+            %td 
+              = @product.date
     .item-payment-box
-      %span.item-payment-box__price ¥2,300
+      %span.item-payment-box__price
+        = fa_icon "yen"
+        = @product.price.to_s(:delimited)
       %span.item-payment-box__tax (税込)
       %span.item-payment-box__shipping-fee 送料込み
-    
-    %a.button{ href: "#", } 購入画面に進む
-    -# %a.item-action-text{ data-toggle: "#", data-url-sheme: "#", data-action: "#", data-key: "#", data-play-id: "#", data-adjust-url: "#", }
+    = link_to "購入画面に進む", "#", class: "button"
+    -# %a.button{ href: "#", } 購入画面に進む
     .item-description
-      .item-description__content 
-        "商品説明"
-        ■品 番：
-        ■サイズ：
-        ■重 さ：
-        ■仕 様：
-        ■カラー：
-        ■付 属：
-        ケアカードあり
-
+      .item-description__content
+        = @product.description
     .item-button-opinion.clearfix
       .item-button-opinion__left-side
         %button.item-button-opinion__left-side--like{ type: "button", name: "like!" }
@@ -120,7 +97,6 @@
         %a{ href: "#", target: "_blank" }
           = fa_icon "lock"
           %span あんしん・あんぜんへの取り組み
-
   .comment
     .comment__content
       .comment__content--box
@@ -131,17 +107,17 @@
           %textarea.input-field{ type: "text", name: "body", value: ""}
           %button.comment-submit{ type: "submit" }
             %span コメントする
-
   .item-link.clearfix
     .item-link__prev
-      %a{ href: "#" }
+      - if @product.previous.present?
         = fa_icon "arrow-left", class: "prev"
-        【男女共に大人気】ターコイズデザインバングル
+        = link_to product_path(@product.previous) do
+          = @product.previous.name       
     .item-link__next
-      %a{ href: "#" }
-        "コート"
+      - if @product.next.present?
+        = link_to product_path(@product.next) do
+          = @product.next.name
         = fa_icon "arrow-right", class: "next"
-
   .social-media
     .social-media__icons
       %li.social-icon.facebook
@@ -153,8 +129,7 @@
       %li.social-icon.pinterest
         %a.social-media__icons--link{ href: "#", target: "_blank" }
           %i.fa.fa-pinterest.fa-2x
-
-
   = render 'shared/breadcrumbs'
-
-    -# = render "部分テンプレート"
+  = render 'shared/productsindexadvertisement'
+  = render 'shared/productsindexfooter'
+ 

@@ -1,0 +1,42 @@
+.index
+  
+  = render "shared/productsindexheader"
+
+  .second
+    .second__flame
+      
+      .second__flame__campaign
+        = image_tag "/assets/free.jpg", class: "image"
+
+      
+      .second__flame__current-item
+        .second__flame__current-item__title
+          人気の商品
+        .second__flame__current-item__category
+          .second__flame__current-item__category__box
+            %li.list
+              全カテゴリー
+        
+      .second__flame__item
+        .second__flame__item__box
+          .second__flame__item__box__top
+            .second__flame__item__box__top__right
+              新着アイテム
+            .second__flame__item__box__top__left
+              もっと見る ＞
+          .second__flame__item__box__bottom
+            .second__flame__item__box__bottom__flame
+              %a.second__flame__item__box__bottom__flame__line{ href: "/products/1", method: "Get"}
+                
+                .second__flame__item__box__bottom__flame__line__image
+                  .second__flame__item__box__bottom__flame__line__image__price
+    
+                .second__flame__item__box__bottom__flame__line__detail
+                  .second__flame__item__box__bottom__flame__line__detail__content
+                    紹介
+                    
+                
+
+  = render 'shared/productsindexadvertisement'
+  
+  = render 'shared/productsindexfooter'

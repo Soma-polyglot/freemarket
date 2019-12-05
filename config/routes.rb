@@ -8,15 +8,22 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   root to: "products#index"
-  resources :users, only: [:show]
+  resources :users, only: [:edit,:show]
   
-  resources :products
+  resources :products do
+    collection do 
+      get 'pagenotfound'
+    end
+  end
+
+
   resources :product_images, only: [:edit, :update, :destroy] do
     collection do
       post :upload
     end
   end
 
+  resources :posts
   resources :cards, only: [:new, :create]
   resources :signup, only: [:create] do
     collection do

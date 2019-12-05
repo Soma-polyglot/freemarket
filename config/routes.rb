@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     omniauth_callbacks: 'users/omniauth_callbacks'
   }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-
+  resources :users
   resources :products
   resources :product_images, only: [:edit, :update, :destroy] do
     collection do
@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     end
   end
 
-  root to: "signup#signup_link"
+  root to: "products#index"
 
   resources :cards, only: [:new, :create]
   resources :signup, only: [:create] do

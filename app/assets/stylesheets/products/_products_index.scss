@@ -691,3 +691,37 @@
     }
   }
 }
+
+.main-header__bottom__right__new__user{
+  a{
+    background-color: rgb(234, 53, 45);
+    color: rgb(255, 255, 255);
+    display: block;
+    font-size: 14px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(234, 53, 45);
+    border-image: initial;
+    border-radius: 4px;
+    padding: 8px 10px;
+    text-decoration: none;
+  }
+}
+
+.main-header__bottom__right__login{
+  margin-left: 11px;
+  a{
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 149, 238);
+    display: block;
+    font-size: 14px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(0, 149, 238);
+    border-image: initial;
+    border-radius: 4px;
+    padding: 8px 10px;
+    transition: all 0.3s ease-out 0s;
+    text-decoration: none;
+  }
+}

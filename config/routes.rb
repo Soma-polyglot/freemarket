@@ -7,14 +7,16 @@ Rails.application.routes.draw do
   }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
+
+  root to: "products#index"
+  resources :users, only: [:show]
+  
   resources :products
   resources :product_images, only: [:edit, :update, :destroy] do
     collection do
       post :upload
     end
   end
-
-  root to: "signup#signup_link"
 
   resources :cards, only: [:new, :create]
   resources :signup, only: [:create] do

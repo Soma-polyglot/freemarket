@@ -12,7 +12,7 @@
 |last_name_kana|string|null: false|
 |first_name_kana|string|null: false|
 |birthday|date|null: false|
-|phone_number|integer|null: false, unique: true|
+|phone_number|string|null: false, unique: true|
 |profile|text|
 |image|text|
 
@@ -21,32 +21,31 @@
 - has_many :comments
 - has_many :likes
 - has_one :credit
-- has_one :adress
+- has_one :address
 
 
-## adressesテーブル
+## addressesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|null: false, foreign_key: true|
 |postal_code|intrger|null false|
 |prefecture|string|null: false|
 |city|string|null: false|
-|adress|string|null: false|
+|address|string|null: false|
 |building|string|
-|telephone_number|integer|
+|telephone_number|string|
 
 ### Association
 - belongs_to :user
 
 
-## creditsテーブル
+## cardsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|null: false, foreign_key: true|
-|number|integer|null: false, unique: true|
-|expiration_year|integer|null: false|
-|expiration_month|integer|null: false|
-|security_code|integer|null: false|
+|customer_id|string|null: false, unique: true|
+|card_id|string|null: false|
+
 
 ### Association
 - belongs_to :user
@@ -85,7 +84,7 @@
 |size|string|null: false|
 |brand_id|references|null: false, foreign_key: true|
 |status|string|null: false|
-|fee|integer|null: false|
+|fee|string|null: false|
 |area|string|null: false|
 |date|string|null: false|
 |price|integer|null: false|

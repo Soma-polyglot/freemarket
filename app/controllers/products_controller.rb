@@ -11,6 +11,10 @@ class ProductsController < ApplicationController
     @nike = @products.eager_load(:brand).where(id: 4)
   end
 
+  def show    
+    @product = Product.find(params[:id])
+  end
+
   def new
     @product = Product.new
     #@parents = Category.all.order("id ASC").limit(13)

@@ -1,33 +1,28 @@
-.bread-crumbs {
-  position: relative;
-  border-top: 1px solid #eee;
+.breadcrumbs-box {
+  width: 100%;
+  height: 48px;
+  background-color: white;
+  border-top: solid 1px whitesmoke;
   box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
-  background-color: #fff;
-  margin: 0;
-  padding: 0;
-  display: block;
-  height: 50px;
-  width: 1440px;
-  &__lists {
+  .breadcrumbs {
+    display: block;
     width: 1020px;
     margin: 0 auto;
-    padding: 16px 0;
-    white-space: normal;
-    overflow: visible;
-    padding: 16px auto;
-    &:last-child{
-      font-weight: 600;
+    line-height: 48px;
+    & span {
+      font-weight: bold;
     }
-    &--part {
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      font-size: 14px;
-      line-height: 1.2;
-      display: inline-block;
-      .current-page {
-        text-decoration: none;
-        color: #333;
+    a {
+      text-decoration: none;
+      color: inherit;
+      &:hover {
+        @include link_hover();
       }
+    }
+    #breadcrumbs-icon {
+      margin: 0 8px;
+      font-size: 10px;
+      color: gray;
     }
   }
 }

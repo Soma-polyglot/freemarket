@@ -5,7 +5,7 @@
 @import "config/colors";
 
 // modules
-@import "modules/breadcrumbs";
+// @import "modules/breadcrumbs";
 @import "modules/pagenotfound";
 @import "modules/sell-btn";
 @import "modules/signin";
@@ -24,7 +24,19 @@
 @import "products/products_show";
 
 // users
-//@import "users/mypage-nav";
+// @import "users/mypage-nav";
 //@import "users/mypage";
 @import "users/users_edit";
 //@import "users/users";
+
+//purchase
+@import "purchase/index";
+
+// add
+@import "modules/productsindexheader";
+@import "modules/productsindexfooter";
+@import "modules/productsindexadvertisement";
+@import "owl.carousel";
+@import "owl.theme.default";
+
+@import "modules/purchase";

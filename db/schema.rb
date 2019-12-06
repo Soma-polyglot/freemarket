@@ -10,7 +10,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 20191204032103) do
 
   create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -43,7 +42,7 @@ ActiveRecord::Schema.define(version: 20191204032103) do
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",       null: false
-    t.string   "ancestry"
+    t.integer  "ancestry"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -64,7 +63,7 @@ ActiveRecord::Schema.define(version: 20191204032103) do
     t.string   "size",                      null: false
     t.integer  "brand_id",                  null: false
     t.string   "status",                    null: false
-    t.string   "fee",                       null: false
+    t.integer  "fee",                       null: false
     t.string   "area",                      null: false
     t.string   "date",                      null: false
     t.integer  "price",                     null: false
@@ -93,9 +92,9 @@ ActiveRecord::Schema.define(version: 20191204032103) do
     t.string   "last_name_kana",                       null: false
     t.string   "first_name_kana",                      null: false
     t.date     "birthday",                             null: false
-    t.string   "phone_number",                         null: false
-    t.text     "profile",                limit: 65535
-    t.text     "image",                  limit: 65535
+    t.integer  "phone_number",                         null: false
+    t.text     "profile",                limit: 65535, null: false
+    t.text     "image",                  limit: 65535, null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -104,7 +103,6 @@ ActiveRecord::Schema.define(version: 20191204032103) do
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
-
 
   add_foreign_key "addresses", "users"
   add_foreign_key "cards", "users"

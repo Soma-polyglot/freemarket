@@ -7,10 +7,11 @@ Rails.application.routes.draw do
   }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  resources :users, only: [:show]
+
+  root to: "users#index"
+  resources :users, only: [:edit,:show,:index]
   resources :products
   resources :mypage
-  root to: "mypage#index"
 
   root to: "products#index"
   resources :users, only: [:edit,:show] do

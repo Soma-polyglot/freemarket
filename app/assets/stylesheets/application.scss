@@ -1,8 +1,14 @@
 @import "./reset";
 @import "font-awesome";
 
+
 // modules
 //@import "modules/breadcrumbs";
+
+@import "config/colors";
+
+// @import "modules/breadcrumbs";
+
 @import "modules/pagenotfound";
 @import "modules/sell-btn";
 @import "modules/signin";
@@ -12,11 +18,11 @@
 @import "modules/simple_header";
 
 // mypage
-@import "mypage/mypage-nav";
+// @import "mypage/mypage-nav";
 @import "mypage/mypage_top";
 
 
-// products
+
 @import "products/products_index";
 @import "products/products_new";
 @import "products/products_show";
@@ -26,10 +32,8 @@
 @import "users/users_edit";
 //@import "users/users";
 
-//purchase
 @import "purchase/index";
 
-// add
 @import "modules/productsindexheader";
 @import "modules/productsindexfooter";
 @import "modules/productsindexadvertisement";
@@ -37,3 +41,5 @@
 @import "owl.theme.default";
 
 @import "modules/purchase";
+
+@import "posts/new";

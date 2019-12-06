@@ -33,17 +33,20 @@
 
           .second__flame__item__box__bottom
             - @redy.each do |f|
-              .second__flame__item__box__bottom__flame
+              %a.second__flame__item__box__bottom__flame{ href: "/products/#{f.id}", method: "Get"}
                 .second__flame__item__box__bottom__flame__line
-                  .second__flame__item__box__bottom__flame__line__detail
-                    .second__flame__item__box__bottom__flame__line__detail__content
-                      =simple_format(f.name)
+                  
                   .second__flame__item__box__bottom__flame__line__image
                     - f.product_images.each do |image|
                       =image_tag "#{image.image}" , class: "index_image"
+
                     .second__flame__item__box__bottom__flame__line__image__price
                       ¥ 
                       =f.price.to_s(:delimited)
+                  
+                  .second__flame__item__box__bottom__flame__line__detail
+                    .second__flame__item__box__bottom__flame__line__detail__content
+                      =simple_format(f.name)
       
       #mens.second__flame__item
         .second__flame__item__box
@@ -55,17 +58,20 @@
 
           .second__flame__item__box__bottom
             - @mens.each do |f|
-              .second__flame__item__box__bottom__flame
+              %a.second__flame__item__box__bottom__flame{ href: "/products/#{f.id}", method: "Get"}
                 .second__flame__item__box__bottom__flame__line
-                  .second__flame__item__box__bottom__flame__line__detail
-                    .second__flame__item__box__bottom__flame__line__detail__content
-                      =simple_format(f.name)
+                  
                   .second__flame__item__box__bottom__flame__line__image
                     - f.product_images.each do |image|
                       =image_tag "#{image.image}" , class: "index_image"
+
                     .second__flame__item__box__bottom__flame__line__image__price
                       ¥ 
                       =f.price.to_s(:delimited)  
+                  
+                  .second__flame__item__box__bottom__flame__line__detail
+                    .second__flame__item__box__bottom__flame__line__detail__content
+                      =simple_format(f.name)
           
       
       #camera.second__flame__item
@@ -78,17 +84,20 @@
 
           .second__flame__item__box__bottom
             - @camera.each do |f|
-              .second__flame__item__box__bottom__flame
+              %a.second__flame__item__box__bottom__flame{ href: "/products/#{f.id}", method: "Get"}
                 .second__flame__item__box__bottom__flame__line
-                  .second__flame__item__box__bottom__flame__line__detail
-                    .second__flame__item__box__bottom__flame__line__detail__content
-                      =simple_format(f.name)
+                  
                   .second__flame__item__box__bottom__flame__line__image
                     - f.product_images.each do |image|
                       =image_tag "#{image.image}" , class: "index_image"
+
                     .second__flame__item__box__bottom__flame__line__image__price
                       ¥ 
                       =f.price.to_s(:delimited)  
+                  
+                  .second__flame__item__box__bottom__flame__line__detail
+                    .second__flame__item__box__bottom__flame__line__detail__content
+                      =simple_format(f.name)
           
       
       #toys.second__flame__item
@@ -101,17 +110,20 @@
 
           .second__flame__item__box__bottom
             - @toys.each do |f|
-              .second__flame__item__box__bottom__flame
+              %a.second__flame__item__box__bottom__flame{ href: "/products/#{f.id}", method: "Get"}
                 .second__flame__item__box__bottom__flame__line
-                  .second__flame__item__box__bottom__flame__line__detail
-                    .second__flame__item__box__bottom__flame__line__detail__content
-                      =simple_format(f.name)
+                  
                   .second__flame__item__box__bottom__flame__line__image
                     - f.product_images.each do |image|
                       =image_tag "#{image.image}" , class: "index_image"
+
                     .second__flame__item__box__bottom__flame__line__image__price
                       ¥ 
                       =f.price.to_s(:delimited) 
+                  
+                  .second__flame__item__box__bottom__flame__line__detail
+                    .second__flame__item__box__bottom__flame__line__detail__content
+                      =simple_format(f.name)
           
                   
       .second__flame__current-item
@@ -138,17 +150,20 @@
             
           .second__flame__item__box__bottom
             - @chanel.each do |f|
-              .second__flame__item__box__bottom__flame
+              %a.second__flame__item__box__bottom__flame{ href: "/products/#{f.id}", method: "Get"}
                 .second__flame__item__box__bottom__flame__line
-                  .second__flame__item__box__bottom__flame__line__detail
-                    .second__flame__item__box__bottom__flame__line__detail__content
-                      =simple_format(f.name)
+                  
                   .second__flame__item__box__bottom__flame__line__image
                     - f.product_images.each do |image|
                       =image_tag "#{image.image}" , class: "index_image"
+
                     .second__flame__item__box__bottom__flame__line__image__price
                       ¥ 
                       =f.price.to_s(:delimited)
+                  
+                  .second__flame__item__box__bottom__flame__line__detail
+                    .second__flame__item__box__bottom__flame__line__detail__content
+                      =simple_format(f.name)
 
       #VUITTON.second__flame__item
         .second__flame__item__box
@@ -160,17 +175,20 @@
 
           .second__flame__item__box__bottom
             - @vuitton.each do |f|
-              .second__flame__item__box__bottom__flame
+              %a.second__flame__item__box__bottom__flame{ href: "/products/#{f.id}", method: "Get"}
                 .second__flame__item__box__bottom__flame__line
-                  .second__flame__item__box__bottom__flame__line__detail
-                    .second__flame__item__box__bottom__flame__line__detail__content
-                      =simple_format(f.name)
+                  
                   .second__flame__item__box__bottom__flame__line__image
                     - f.product_images.each do |image|
                       =image_tag "#{image.image}" , class: "index_image"
+
                     .second__flame__item__box__bottom__flame__line__image__price
                       ¥ 
                       =f.price.to_s(:delimited) 
+                  
+                  .second__flame__item__box__bottom__flame__line__detail
+                    .second__flame__item__box__bottom__flame__line__detail__content
+                      =simple_format(f.name)
           
 
       #Supreme.second__flame__item
@@ -183,17 +201,20 @@
               もっと見る ＞
           .second__flame__item__box__bottom
             - @supreme.each do |f|
-              .second__flame__item__box__bottom__flame
+              %a.second__flame__item__box__bottom__flame{ href: "/products/#{f.id}", method: "Get"}
                 .second__flame__item__box__bottom__flame__line
-                  .second__flame__item__box__bottom__flame__line__detail
-                    .second__flame__item__box__bottom__flame__line__detail__content
-                      =simple_format(f.name)
+                 
                   .second__flame__item__box__bottom__flame__line__image
                     - f.product_images.each do |image|
                       =image_tag "#{image.image}" , class: "index_image"
+
                     .second__flame__item__box__bottom__flame__line__image__price
                       ¥ 
                       =f.price.to_s(:delimited)
+                    
+                  .second__flame__item__box__bottom__flame__line__detail
+                    .second__flame__item__box__bottom__flame__line__detail__content
+                      =simple_format(f.name)
       
       #NIKE.second__flame__item
         .second__flame__item__box
@@ -205,28 +226,22 @@
 
           .second__flame__item__box__bottom
             - @nike.each do |f|
-              .second__flame__item__box__bottom__flame
+              %a.second__flame__item__box__bottom__flame{ href: "/products/#{f.id}", method: "Get"}
                 .second__flame__item__box__bottom__flame__line
-                  .second__flame__item__box__bottom__flame__line__detail
-                    .second__flame__item__box__bottom__flame__line__detail__content
-                      =simple_format(f.name)
+                  
                   .second__flame__item__box__bottom__flame__line__image
                     - f.product_images.each do |image|
                       =image_tag "#{image.image}" , class: "index_image"
                     .second__flame__item__box__bottom__flame__line__image__price
                       ¥ 
                       =f.price.to_s(:delimited)  
+                  
+                  .second__flame__item__box__bottom__flame__line__detail
+                    .second__flame__item__box__bottom__flame__line__detail__content
+                      =simple_format(f.name)
           
 
-            .second__flame__item__box__bottom__flame
-              %a.second__flame__item__box__bottom__flame__line{ href: "/products/1", method: "Get"}
-                
-                .second__flame__item__box__bottom__flame__line__image
-                  .second__flame__item__box__bottom__flame__line__image__price
-    
-                .second__flame__item__box__bottom__flame__line__detail
-                  .second__flame__item__box__bottom__flame__line__detail__content
-                    紹介
+                    
           = render partial: 'sell-btn'
                     
   = render 'shared/productsindexadvertisement'

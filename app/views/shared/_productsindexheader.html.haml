@@ -2,7 +2,8 @@
   .main-header
     .main-header__top
       .main-header__top__mask
-        = image_tag "/assets/fmarket_logo_red.svg", class: "icon"
+        = link_to products_path do
+          = image_tag "/assets/fmarket_logo_red.svg", class: "icon"
       .main-header__top__search.clearfix
         %input.search-form{name: "keyword", placeholder: "何かお探しですか？", type: "search", value:  ""}
         .main-header__top__search__btn

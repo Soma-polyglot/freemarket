@@ -17,4 +17,13 @@ class Product < ApplicationRecord
   belongs_to_active_hash :burden
   belongs_to_active_hash :sending
   belongs_to_active_hash :pattern
+
+  def previous
+    Product.where("id < ?", self.id).order("id DESC").first
+  end
+ 
+  def next
+    Product.where("id > ?", self.id).order("id ASC").first
+  end
+
 end

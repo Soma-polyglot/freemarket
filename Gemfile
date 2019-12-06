@@ -80,5 +80,8 @@ gem 'gretel'
 gem 'payjp'
 gem 'pry-rails'
 gem 'dotenv-rails'
+gem 'recaptcha', require: "recaptcha/rails"
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-facebook'
 gem 'ancestry'
-

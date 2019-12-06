@@ -1,7 +1,7 @@
 .wrapper__signup
 
   .signup__step1
-    = render "signup_header"
+    = render "signup/signup_header"
 
   %main.signup__main
     %h2.signup__main__header
@@ -93,6 +93,8 @@
         %p.precautions
           = "※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。"
         .form__group
+          = recaptcha_tags
+        .form__group
           %p.consent
             = "「次へ進む」のボタンを押すことにより、利用規約に同意したものとみなします"
         .form__group
@@ -102,4 +104,4 @@
             = "本人情報の登録について"
             %i.fa.fa-angle-right
 
-  = render "simple_footer"
+  = render "signup/simple_footer"

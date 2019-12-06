@@ -13,7 +13,11 @@ Rails.application.routes.draw do
   root to: "mypage#index"
 
   root to: "products#index"
-  resources :users, only: [:edit,:show]
+  resources :users, only: [:edit,:show] do
+    collection do 
+      get 'signout'
+    end
+  end
   
   resources :products do
     collection do 

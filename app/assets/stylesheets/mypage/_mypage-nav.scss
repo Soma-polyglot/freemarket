@@ -21,15 +21,18 @@
       padding: 16px;
       background-color: white;
       border-top: solid 1px gray;
+       text-decoration: none;
 
       &:first-child {
         border-top: none;
       }
 
       p {
+       
         font-size: 14px;
         color: black;
         line-height: 1;
+        
       }
 
       i {

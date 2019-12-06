@@ -1,25 +1,43 @@
-.wrapper
+.wrapper__signup
 
   .signup__step1
-    = render "signup_header"
+    = render "signup/signup_header"
 
   %main.signup__main
     %h2.signup__main__header
       = "会員情報入力"
-    = form_for "#" do |f|
+    = form_for @user, url: step2_signup_index_path, method: :get do |f|
       .signup__main__content
         .form__group
           = f.label :nickname, "ニックネーム"
           %sapn.form__require 必須
-          = f.text_field :content, class: "input__nomal", placeholder: "例)メルカリ太郎"
+          = f.text_field :nickname, class: "input__nomal", placeholder: "例)メルカリ太郎"
+          - if @user.errors.any?
+            - unless @user.valid?
+              - if errors = @user.errors.full_messages_for(:nickname.to_sym)
+                %ul
+                  - errors.each do |error|
+                    %li=error
         .form__group
           = f.label :email, "メールアドレス"
           %sapn.form__require 必須
-          = f.email_field :content, class: "input__nomal", placeholder: "PC・携帯どちらでも可"
+          = f.email_field :email, class: "input__nomal", placeholder: "PC・携帯どちらでも可"
+          - if @user.errors.any?
+            - unless @user.valid?
+              - if errors = @user.errors.full_messages_for(:email.to_sym)
+                %ul
+                  - errors.each do |error|
+                    %li=error
         .form__group
           = f.label :password, "パスワード"
           %sapn.form__require 必須
-          = f.password_field :content, class: "input__nomal", placeholder: "7文字以上"
+          = f.password_field :password, class: "input__nomal", placeholder: "7文字以上"
+          - if @user.errors.any?
+            - unless @user.valid?
+              - if errors = @user.errors.full_messages_for(:password.to_sym)
+                %ul
+                  - errors.each do |error|
+                    %li=error
         .form__group
           %h3.identification
             = "本人確認"
@@ -29,21 +47,53 @@
           = f.label :name, "お名前(全角)"
           %sapn.form__require 必須
           .form__group__name__kanzi
-            = f.text_field :content, class: "input__half", placeholder: "例)山田"
-            = f.text_field :content, class: "input__half", placeholder: "例)彩"
+            = f.text_field :last_name, class: "input__half", placeholder: "例)山田"
+            = f.text_field :first_name, class: "input__half", placeholder: "例)彩"
+            - if @user.errors.any?
+              - unless @user.valid?
+                - if errors = @user.errors.full_messages_for(:last_name.to_sym)
+                  %ul
+                    - errors.each do |error|
+                      %li=error
+            - if @user.errors.any?
+              - unless @user.valid?
+                - if errors = @user.errors.full_messages_for(:first_name.to_sym)
+                  %ul
+                    - errors.each do |error|
+                      %li=error
         .form__group
           = f.label :name_kana, "お名前カナ(全角)"
           %sapn.form__require 必須
           .form__group__name__kana
-            = f.text_field :content, class: "input__half", placeholder: "例)ヤマダ"
-            = f.text_field :content, class: "input__half", placeholder: "例)アヤ"
+            = f.text_field :last_name_kana, class: "input__half", placeholder: "例)ヤマダ"
+            = f.text_field :first_name_kana, class: "input__half", placeholder: "例)アヤ"
+            - if @user.errors.any?
+              - unless @user.valid?
+                - if errors = @user.errors.full_messages_for(:last_name_kana.to_sym)
+                  %ul
+                    - errors.each do |error|
+                      %li=error
+            - if @user.errors.any?
+              - unless @user.valid?
+                - if errors = @user.errors.full_messages_for(:first_name_kana.to_sym)
+                  %ul
+                    - errors.each do |error|
+                      %li=error
         .form__group
           = f.label :birthday, "生年月日"
           %sapn.form__require 必須
           .form__birtyday
             != sprintf(f.date_select(:birthday, use_month_numbers: true, prompt:"--", date_separator: '%s', start_year: Time.now.year, end_year: 1930), '年','月') + '日'
+            - if @user.errors.any?
+              - unless @user.valid?
+                - if errors = @user.errors.full_messages_for(:birthday.to_sym)
+                  %ul
+                    - errors.each do |error|
+                      %li=error
         %p.precautions
           = "※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。"
+        .form__group
+          = recaptcha_tags
         .form__group
           %p.consent
             = "「次へ進む」のボタンを押すことにより、利用規約に同意したものとみなします"
@@ -54,4 +104,4 @@
             = "本人情報の登録について"
             %i.fa.fa-angle-right
 
-  = render "simple_footer"
+  = render "signup/simple_footer"

@@ -1,0 +1,46 @@
+.header
+  .main-header
+    .main-header__top
+      .main-header__top__mask
+        = image_tag "/assets/fmarket_logo_red.svg", class: "icon"
+      .main-header__top__search.clearfix
+        %input.search-form{name: "keyword", placeholder: "何かお探しですか？", type: "search", value:  ""}
+        .main-header__top__search__btn
+          = fa_icon "search", class: "icon"
+
+    .main-header__bottom
+      .main-header__bottom__left
+        .main-header__bottom__left__category-search
+          = link_to '#', class: "write" do
+            = fa_icon "list-ul", class: "icon"
+            カテゴリーから探す
+        .main-header__bottom__left__brand-search
+          = link_to '#', class: "write" do
+            = fa_icon "tags", class: "icon"
+            ブランドから探す
+      
+      .main-header__bottom__right
+        - if user_signed_in?
+          .main-header__bottom__right__favorite
+            = link_to '#', class: "write" do
+              = fa_icon "heart-o", class: "icon"
+              いいね！一覧
+          .main-header__bottom__right__alarm
+            = link_to '#', class: "write" do
+              = fa_icon "bell-o", class: "icon"
+              お知らせ
+          .main-header__bottom__right__todolist
+            = link_to '#', class: "write" do
+              = fa_icon "check", class: "icon"
+              やることリスト
+          .main-header__bottom__right__mypage
+            = link_to destroy_user_session_path, method: :delete, class: "write" do
+              = fa_icon "user", class: "icon"
+              マイページ
+        - else
+          .main-header__bottom__right__new__user
+            = link_to signup_link_signup_index_path do
+              = "新規会員登録"
+          .main-header__bottom__right__login
+            = link_to new_user_session_path do
+              = "ログイン"

@@ -9,7 +9,7 @@
     .main
       .main__line
         .main__line__contener
-        = form_for '#' , html: {class: 'form'} do |f|
+        = form_for (@product) do |f|
           .main__line__contener__head
             商品の情報を入力
 
@@ -24,22 +24,20 @@
                 .main__line__contener__form__upload__image__container
                   .main__line__contener__form__upload__image__container__sell
                 .main__line__contener__form__upload__image__box
-                  %input.drop{multiple: "", name: "image1", style: "display: none;", type: "file"}/
                   %p.list
                     ドラッグアンドドロップ
                     またはクリックしてファイルをアップロード
-
+                = f.file_field :image, class: 'hidden'
+                    
           .main__line__contener__item
             .main__line__contener__item__name
               商品名
             .main__line__contener__item__name-box
-              %input.input-name{placeholder: "商品名（必須 40文字まで)", value: ""}/
-            
+              = f.text_field :name, class: 'input-name', placeholder: "  商品名（必須 40文字まで)"
             .main__line__contener__item__explain
               商品の説明
             .main__line__contener__item__explain-box
-              =f.text_area :explain, placeholder: '商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。', class: "input-explain", rows: '5'
-          
+              = f.text_area :description, placeholder: '商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。', class: "input-explain", rows: '5'
           .main__line__contener__item__detail.clearfix
             %h3.left 商品の詳細
             .main__line__contener__item__detail__right
@@ -51,7 +49,7 @@
               .main__line__contener__item__detail__right__state
                 商品の状態
               .main__line__contener__item__detail__right__state-form
-                =f.select :state,['---','新品、未使用','未使用に近い','目立った傷や汚れなし','やや傷や汚れあり','傷や汚れあり','全体的に状態が悪い'], {}, class: "select-state"
+                =f.select :status,['---','新品、未使用','未使用に近い','目立った傷や汚れなし','やや傷や汚れあり','傷や汚れあり','全体的に状態が悪い'], {}, class: "select-state"
 
           .main__line__contener__item__send.clearfix
             %h3.left 配送について
@@ -59,7 +57,7 @@
               .main__line__contener__item__send__right__burden
                 配送料の負担
               .main__line__contener__item__send__right__burden-form
-                =f.select :burden,['---','送料込み(出品者負担)','着払い(購入者負担)'], {}, class: "select-burden"
+                =f.select :fee,['---','送料込み(出品者負担)','着払い(購入者負担)'], {}, class: "select-burden"
               
               .main__line__contener__item__send__right__area
                 発送元の地域
@@ -82,7 +80,7 @@
                     .main__line__contener__item__price__right__top__box__right
                       ¥
                       .main__line__contener__item__price__right__top__box__right__box
-                        %input.input-price{placeholder: "例）300", value: ""}/
+                        = f.text_field :name, class: 'input-price', placeholder: "例）300  "
                   
                 .main__line__contener__item__price__right__middle.clearfix
                   .main__line__contener__item__price__right__middle__left
@@ -113,9 +111,9 @@
                 加盟店規約
               に同意したことになります。
 
-            %button.red{type: "submit"}出品する
+            = f.submit "出品する", class: 'red'
             
-            = link_to "#", class: "gray" do 
+            = link_to root_path, class: "gray" do 
               もどる
  
       

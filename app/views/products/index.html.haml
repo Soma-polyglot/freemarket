@@ -1,0 +1,234 @@
+.index
+  
+  = render "shared/productsindexheader"
+
+  .second
+    .second__flame
+      = link_to "aaaa",posts_path
+      .second__flame__campaign
+        = image_tag "/assets/free.jpg", class: "image"
+
+      .second__flame__current-item
+        .second__flame__current-item__title
+          人気のカテゴリー
+        .second__flame__current-item__category
+          .second__flame__current-item__category__box
+            %a.list{href: '#redy'}
+              レディース
+            %a.list{href: '#mens'}
+              メンズ
+            %a.list{href: '#camera'}
+              家電・スマホ・カメラ
+            %a.list{href: '#toys'}
+              おもちゃ・ホビー・グッズ
+  
+      #redy.second__flame__item
+        .second__flame__item__box
+          .second__flame__item__box__top
+            .second__flame__item__box__top__right
+              レディース新着アイテム
+            .second__flame__item__box__top__left
+              もっと見る　＞
+
+
+          .second__flame__item__box__bottom
+            - @redy.each do |f|
+              .second__flame__item__box__bottom__flame
+                .second__flame__item__box__bottom__flame__line
+                  .second__flame__item__box__bottom__flame__line__detail
+                    .second__flame__item__box__bottom__flame__line__detail__content
+                      =simple_format(f.name)
+                  .second__flame__item__box__bottom__flame__line__image
+                    - f.product_images.each do |image|
+                      =image_tag "#{image.image}" , class: "index_image"
+                    .second__flame__item__box__bottom__flame__line__image__price
+                      ¥ 
+                      =f.price.to_s(:delimited)
+      
+      #mens.second__flame__item
+        .second__flame__item__box
+          .second__flame__item__box__top
+            .second__flame__item__box__top__right
+              メンズ新着アイテム
+            .second__flame__item__box__top__left
+              もっと見る　＞
+
+          .second__flame__item__box__bottom
+            - @mens.each do |f|
+              .second__flame__item__box__bottom__flame
+                .second__flame__item__box__bottom__flame__line
+                  .second__flame__item__box__bottom__flame__line__detail
+                    .second__flame__item__box__bottom__flame__line__detail__content
+                      =simple_format(f.name)
+                  .second__flame__item__box__bottom__flame__line__image
+                    - f.product_images.each do |image|
+                      =image_tag "#{image.image}" , class: "index_image"
+                    .second__flame__item__box__bottom__flame__line__image__price
+                      ¥ 
+                      =f.price.to_s(:delimited)  
+          
+      
+      #camera.second__flame__item
+        .second__flame__item__box
+          .second__flame__item__box__top
+            .second__flame__item__box__top__right
+              家電・スマホ・カメラ新着アイテム
+            .second__flame__item__box__top__left
+              もっと見る　＞
+
+          .second__flame__item__box__bottom
+            - @camera.each do |f|
+              .second__flame__item__box__bottom__flame
+                .second__flame__item__box__bottom__flame__line
+                  .second__flame__item__box__bottom__flame__line__detail
+                    .second__flame__item__box__bottom__flame__line__detail__content
+                      =simple_format(f.name)
+                  .second__flame__item__box__bottom__flame__line__image
+                    - f.product_images.each do |image|
+                      =image_tag "#{image.image}" , class: "index_image"
+                    .second__flame__item__box__bottom__flame__line__image__price
+                      ¥ 
+                      =f.price.to_s(:delimited)  
+          
+      
+      #toys.second__flame__item
+        .second__flame__item__box
+          .second__flame__item__box__top
+            .second__flame__item__box__top__right
+              おもちゃ・ホビー・グッズ新着アイテム
+            .second__flame__item__box__top__left
+              もっと見る　＞
+
+          .second__flame__item__box__bottom
+            - @toys.each do |f|
+              .second__flame__item__box__bottom__flame
+                .second__flame__item__box__bottom__flame__line
+                  .second__flame__item__box__bottom__flame__line__detail
+                    .second__flame__item__box__bottom__flame__line__detail__content
+                      =simple_format(f.name)
+                  .second__flame__item__box__bottom__flame__line__image
+                    - f.product_images.each do |image|
+                      =image_tag "#{image.image}" , class: "index_image"
+                    .second__flame__item__box__bottom__flame__line__image__price
+                      ¥ 
+                      =f.price.to_s(:delimited) 
+          
+                  
+      .second__flame__current-item
+        .second__flame__current-item__title
+          人気のカテゴリー
+        .second__flame__current-item__category
+          .second__flame__current-item__category__box
+            %a.list{href: '#CHANEl'}
+              CHANEL
+            %a.list{href: '#VUITTON'}
+              LOUIS VUITTON
+            %a.list{href: '#Supreme'}
+              Supreme
+            %a.list{href: '#NIKE'}
+              NIKE
+            
+      #CHANEl.second__flame__item
+        .second__flame__item__box
+          .second__flame__item__box__top
+            .second__flame__item__box__top__right
+              CHANEL新着アイテム
+            .second__flame__item__box__top__left
+              もっと見る　＞
+            
+          .second__flame__item__box__bottom
+            - @chanel.each do |f|
+              .second__flame__item__box__bottom__flame
+                .second__flame__item__box__bottom__flame__line
+                  .second__flame__item__box__bottom__flame__line__detail
+                    .second__flame__item__box__bottom__flame__line__detail__content
+                      =simple_format(f.name)
+                  .second__flame__item__box__bottom__flame__line__image
+                    - f.product_images.each do |image|
+                      =image_tag "#{image.image}" , class: "index_image"
+                    .second__flame__item__box__bottom__flame__line__image__price
+                      ¥ 
+                      =f.price.to_s(:delimited)
+
+      #VUITTON.second__flame__item
+        .second__flame__item__box
+          .second__flame__item__box__top
+            .second__flame__item__box__top__right
+              LOUIS VUITTON新着アイテム
+            .second__flame__item__box__top__left
+              もっと見る　＞
+
+          .second__flame__item__box__bottom
+            - @vuitton.each do |f|
+              .second__flame__item__box__bottom__flame
+                .second__flame__item__box__bottom__flame__line
+                  .second__flame__item__box__bottom__flame__line__detail
+                    .second__flame__item__box__bottom__flame__line__detail__content
+                      =simple_format(f.name)
+                  .second__flame__item__box__bottom__flame__line__image
+                    - f.product_images.each do |image|
+                      =image_tag "#{image.image}" , class: "index_image"
+                    .second__flame__item__box__bottom__flame__line__image__price
+                      ¥ 
+                      =f.price.to_s(:delimited) 
+          
+
+      #Supreme.second__flame__item
+        .second__flame__item__box
+          .second__flame__item__box__top
+            .second__flame__item__box__top__right
+              Supreme新着アイテム
+            .second__flame__item__box__top__left
+
+              もっと見る ＞
+          .second__flame__item__box__bottom
+            - @supreme.each do |f|
+              .second__flame__item__box__bottom__flame
+                .second__flame__item__box__bottom__flame__line
+                  .second__flame__item__box__bottom__flame__line__detail
+                    .second__flame__item__box__bottom__flame__line__detail__content
+                      =simple_format(f.name)
+                  .second__flame__item__box__bottom__flame__line__image
+                    - f.product_images.each do |image|
+                      =image_tag "#{image.image}" , class: "index_image"
+                    .second__flame__item__box__bottom__flame__line__image__price
+                      ¥ 
+                      =f.price.to_s(:delimited)
+      
+      #NIKE.second__flame__item
+        .second__flame__item__box
+          .second__flame__item__box__top
+            .second__flame__item__box__top__right
+              NIKE新着アイテム
+            .second__flame__item__box__top__left
+              もっと見る　＞
+
+          .second__flame__item__box__bottom
+            - @nike.each do |f|
+              .second__flame__item__box__bottom__flame
+                .second__flame__item__box__bottom__flame__line
+                  .second__flame__item__box__bottom__flame__line__detail
+                    .second__flame__item__box__bottom__flame__line__detail__content
+                      =simple_format(f.name)
+                  .second__flame__item__box__bottom__flame__line__image
+                    - f.product_images.each do |image|
+                      =image_tag "#{image.image}" , class: "index_image"
+                    .second__flame__item__box__bottom__flame__line__image__price
+                      ¥ 
+                      =f.price.to_s(:delimited)  
+          
+
+            .second__flame__item__box__bottom__flame
+              %a.second__flame__item__box__bottom__flame__line{ href: "/products/1", method: "Get"}
+                
+                .second__flame__item__box__bottom__flame__line__image
+                  .second__flame__item__box__bottom__flame__line__image__price
+    
+                .second__flame__item__box__bottom__flame__line__detail
+                  .second__flame__item__box__bottom__flame__line__detail__content
+                    紹介
+          = render partial: 'sell-btn'
+                    
+  = render 'shared/productsindexadvertisement'
+  
+  = render 'shared/productsindexfooter'

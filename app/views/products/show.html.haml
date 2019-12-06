@@ -80,7 +80,7 @@
         = @product.price.to_s(:delimited)
       %span.item-payment-box__tax (税込)
       %span.item-payment-box__shipping-fee 送料込み
-    = link_to "購入画面に進む", "#", class: "button"
+    = link_to "購入画面に進む", purchase_index_path, class: "button"
 
     .item-description
       .item-description__content

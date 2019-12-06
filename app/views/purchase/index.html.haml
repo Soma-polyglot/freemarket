@@ -1,16 +1,74 @@
-%h2 購入を確定しますか？
-%p Apple MacBook Pro 13インチ
-%p ¥135,000(送料込み)
-%br
-%h3 支払い方法
-- if @default_card_information.blank?
-  %br /
-- else
-  -#以下カード情報を表示
-  = "**** **** **** " + @default_card_information.last4
-  - exp_month = @default_card_information.exp_month.to_s
-  - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
-  = exp_month + " / " + exp_year
-%br
-= form_tag(action: :pay, method: :post) do
-  %button 購入する
+.wrapper__purchase
+
+  = render "signup/simple_header"
+
+  %main.purchase__main
+    %h2.purchase__main__header
+      = "購入内容の確認"
+
+    .signup__main__content
+      .form__group
+        = "支払い金額"
+        = "¥135,000(送料込み)"
+      .form__group
+        = "支払い方法"
+      - if @default_card_information.blank?
+        %br /
+      - else
+        -#以下カード情報を表示
+        = "**** **** **** " + @default_card_information.last4
+        - exp_month = @default_card_information.exp_month.to_s
+        - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+        = exp_month + " / " + exp_year
+      .form__group
+        = "配送先"
+      = form_tag(action: :pay, method: :post) do
+        %button 購入する
+
+
+-# -# ページタイトル
+-# - content_for(:title) { '購入を確定 - freemarket_sample' }
+
+-# -# コンテンツ
+-# .payment
+-#   %h2.payment__head 購入を確定しますか？
+-#   -# 商品情報
+-#   .payment__group
+-#     .payment__group__content
+-#       = image_tag "/assets/sell-img.png", alt: "goods", class: 'payment__group__content__item'
+-#       %h3.payment__group__content__item-head 競泳水着 セット メンズ
+-#       .payment__group__content__item
+-#         %span.payment__group__content__item__price= "¥2,480"
+-#         %span.payment__group__content__item__fee= "送料込み"
+-#       -# TODO:ポイント機能実装後、ポイントボタン修正
+-#       .payment__group__content__button--none ポイントはありません
+-#       .payment__group__content__item__space
+-#         %span.payment__group__content__item__price 支払い金額
+-#         %span.payment__group__content__item__price= "¥2,480"
+-#         %a.submit 購入する
+        
+-#       .payment__group__content__app アプリをお持ちでない方は以下よりインストールしてご利用いただけます。
+-#       .payment__group__content__item__store-image
+        
+
+
+-#       .payment__group__content
+-#         %h3.payment__group__content__head 配送先
+-#         .payment__group__content__info 〒 444-2121
+-#         .payment__group__content__info 愛知県〇〇市〇〇町〇〇 22-2
+-#         .payment__group__content__info Grand Tiara
+-#         = link_to '#', class: 'payment__group__content__another-link' do
+-#           %span 変更する
+-#           %i.fas.fa-chevron-right
+
+
+-#     .payment__group
+-#       .payment__group__content
+-#         %h3.payment__group__content__head 支払い方法
+-#         .payment__group__content__info ********1234
+-#         .payment__group__content__info 04/24
+-#         = image_tag "/assets/jcb.png", alt: 'jcbcard', class: 'payment__group__content__image'
+-#         = link_to "#", class: 'payment__group__content__another-link' do
+-#           %span 変更する
+-#           %i.fas.fa-chevron-right
+

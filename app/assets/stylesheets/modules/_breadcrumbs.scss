@@ -15,14 +15,11 @@
     a {
       text-decoration: none;
       color: inherit;
-      &:hover {
-        @include link_hover();
       }
-    }
+  }
     #breadcrumbs-icon {
       margin: 0 8px;
       font-size: 10px;
       color: gray;
     }
-  }
 }

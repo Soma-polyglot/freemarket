@@ -1,0 +1,14 @@
+.signout
+  = render "shared/productsindexheader/" 
+  -# = render "shared/breadcrumbs";
+
+  .singout-container.clearfix
+    .right-box
+      .right-box__inside
+        .right-box__inside--button
+          =link_to products_path, class: "button-link" do
+            ログアウト
+    -# = render "mypage/mypage-nav"
+  = render 'shared/productsindexadvertisement'
+  = render 'shared/productsindexfooter'
+  = render 'products/sell-btn'

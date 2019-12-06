@@ -35,7 +35,7 @@
               = fa_icon "check", class: "icon"
               やることリスト
           .main-header__bottom__right__mypage
-            = link_to destroy_user_session_path, method: :delete, class: "write" do
+            = link_to user_path(current_user.id), class: "write" do
               = fa_icon "user", class: "icon"
               マイページ
         - else

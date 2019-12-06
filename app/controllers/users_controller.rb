@@ -11,4 +11,8 @@ class UsersController < ApplicationController
 
   def index
   end
+
+  def signout
+    @user = User.find(params[:id])
+  end
 end

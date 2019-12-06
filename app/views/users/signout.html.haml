@@ -8,7 +8,8 @@
         .right-box__inside--button
           =link_to destroy_user_session_path, method: :delete, class: "button-link" do
             ログアウト
-    -# = render "mypage/mypage-nav"
+    
+    = render "users/mypage-nav"
   = render 'shared/productsindexadvertisement'
   = render 'shared/productsindexfooter'
   = render 'products/sell-btn'

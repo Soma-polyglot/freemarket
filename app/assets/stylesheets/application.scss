@@ -14,7 +14,9 @@
 @import "modules/simple_footer";
 @import "modules/simple_header";
 
-// mrkm
+// mypage
+@import "mypage/mypage-nav";
+@import "mypage/mypage_top";
 //@import "mrkm/common";
 //@import "mrkm/pager";
 
@@ -24,7 +26,6 @@
 @import "products/products_show";
 
 // users
-//@import "users/mypage-nav";
 //@import "users/mypage";
 @import "users/users_edit";
 //@import "users/users";

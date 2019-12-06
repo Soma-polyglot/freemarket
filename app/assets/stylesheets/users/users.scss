@@ -16,7 +16,7 @@
       }
       &__list {
         li {
-          border-top: $border_light_gray;
+          
         }
         li:first-child {
           border: none;
@@ -24,22 +24,22 @@
         &--margin-top {
           margin-top: 8px;
           li {
-            border-top: $border_light_gray;
+            
           }
           li:first-child {
             border: none;
           }
         }
         &__item:active {
-          background-color: $light_gray;
+          background-color: gray;
           font-weight: 600;
         }
         &__item {
-          color: $light_black;
+          color: black;
           display: block;
           min-height: 48px;
           padding: 16px;
-          background-color: $white;
+          background-color: white;
           .mypage-icon {
             float: right;
             font-size: 1.5rem;

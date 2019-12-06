@@ -56,22 +56,26 @@ ActiveRecord::Schema.define(version: 20191204032103) do
   end
 
   create_table "products", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "user_id",                   null: false
+    t.integer  "seller_id",                 null: false
     t.string   "name",                      null: false
-    t.text     "description", limit: 65535, null: false
     t.integer  "category_id",               null: false
-    t.string   "size",                      null: false
-    t.integer  "brand_id",                  null: false
-    t.string   "status",                    null: false
-    t.integer  "fee",                       null: false
-    t.string   "area",                      null: false
-    t.string   "date",                      null: false
+    t.integer  "brand_id"
     t.integer  "price",                     null: false
+    t.text     "description", limit: 65535, null: false
+    t.integer  "condition",                 null: false
+    t.integer  "area",                      null: false
+    t.integer  "size",                      null: false
+    t.integer  "status",                    null: false
+    t.integer  "buyer_id"
+    t.string   "fee",                       null: false
+
+    t.string   "date",                      null: false
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
     t.index ["brand_id"], name: "index_products_on_brand_id", using: :btree
+    t.index ["buyer_id"], name: "index_products_on_buyer_id", using: :btree
     t.index ["category_id"], name: "index_products_on_category_id", using: :btree
-    t.index ["user_id"], name: "index_products_on_user_id", using: :btree
+    t.index ["seller_id"], name: "index_products_on_seller_id", using: :btree
   end
 
   create_table "sns_credentials", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -109,6 +113,11 @@ ActiveRecord::Schema.define(version: 20191204032103) do
   add_foreign_key "product_images", "products"
   add_foreign_key "products", "brands"
   add_foreign_key "products", "categories"
+
+  add_foreign_key "products", "users", column: "buyer_id"
+  add_foreign_key "products", "users", column: "seller_id"
+
   add_foreign_key "products", "users"
   add_foreign_key "sns_credentials", "users"
+
 end

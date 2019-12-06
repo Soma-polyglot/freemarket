@@ -17,18 +17,19 @@ class ProductsController < ApplicationController
 
   def new
     @product = Product.new
-    #@parents = Category.all.order("id ASC").limit(13)
+    @product.product_images.build
   end
 
   def create
-    @product = Product.new(product_params)
-    redirect_to root_path
+    Product.create(product_params)
+    #redirect_to root_path
   end
   
   private
 
   def product_params
-    params.require(:product).permit(:name, :description, :status, :fee, :area, :date, :price )
+    params.require(:product).permit(:name, :category_id, :description, :condition, :fee, :area, :date, :price )
+    #.merge(user_id: current_user.id)
   end
    
 end

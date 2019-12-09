@@ -38,8 +38,10 @@
       border-bottom: 1px solid #f5f5f5;
       font-weight: 600;
     }
-    .form {
-      padding: 64px;
+    .form-a {
+      padding: 72px 16px 24px;
+      background-image: url('https://i0.wp.com/rich-rice.com/wp-content/uploads/2018/04/ciecle2P-kawaii-pink.jpg?w=640&ssl=1');
+      //padding: 64px;
       .text-right {
         text-align: right;
         a {
@@ -121,4 +123,15 @@
     }
   }
   
+}
+.form-a-inner {
+  height: 60px;
+  //background: url(/jp/assets/img/mypage/user-bg.jpg?1326854);
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  font-size: 0;
+}
+.form-a-under {
+  padding: 40px 16px;
 }

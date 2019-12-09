@@ -8,12 +8,14 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   root to: "products#index"
+
+  # root to: "cards#edit"
+
   resources :users, only: [:edit,:show,:index]
 
   resources :products
   resources :mypage
 
-  root to: "products#index"
   resources :users, only: [:edit,:show] do
     member do 
       get 'signout'
@@ -39,7 +41,7 @@ Rails.application.routes.draw do
   end
 
   resources :posts
-  resources :cards, only: [:new, :create]
+  resources :cards, only: [:new, :create, :edit]
   resources :signup, only: [:create] do
     collection do
       get 'signup_link'

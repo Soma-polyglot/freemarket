@@ -1,0 +1,23 @@
+.wrapper
+  = render partial:"shared/productsindexheader"
+  = render partial:"shared/breadcrumbs"
+  .container
+    .container-main
+
+
+
+
+
+      .title プロフィール
+      .form-a
+        .form-a-inner
+      .form-a-under
+      = form_for "#" do |f|
+        = f.text_area :a, placeholder: "よろしく"
+      ログアウトボタンのコードに使う予定
+    .lside
+      = render partial:"users/mypage-nav"
+    
+
+  = render partial:"shared/productsindexfooter"
+  

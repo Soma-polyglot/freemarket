@@ -1,0 +1,120 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  color: black;
+  font-size: 0.8rem;
+}
+
+/* .container {
+  width: 1020px;
+  height: 1252px;
+  font-size: 14px;
+} */
+
+.m--content {
+  float: right;
+  background-color: #ffffff;
+  
+}
+
+.chapter-head {
+  width: 700px;
+  height: 50px;
+  padding: 8px, 24px;
+  border-bottom: 1px solid #f5f5f5;
+  text-align: center;
+  line-height: 1.4;
+  display: block;
+  font-size: 1.5em;
+  margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+
+.credit {
+  margin: 50px;
+  font-size: 16px;
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+
+.setting-payment-list {
+  list-style: none;
+  float: left;
+}
+
+.li {
+  height: 117px;
+  width: 572px;
+  font: 14px;
+  padding: 24px, 0px;
+  border-style: solid;
+  border-width: 0;
+}
+
+.figure {
+  height: 20px;
+  width: 320px;
+  font: 14px;
+}
+
+.img {
+  vertical-align: middle;
+}
+
+.settings-payment-num {
+  margin-bottom: 50px;
+  margin: 8px 0 0;
+  font-size: 16px;
+  color: #333333;
+}
+
+.settings-payment-num2 {
+  margin-bottom: 50px;
+  margin: 8px 0;
+  font-size: 16px;
+  color: #333333;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.buttons {
+  margin: 50px 0px 0px 0px;
+  float: right;
+  color: #0099E8;
+  font: 14px;
+  cursor: pointer;
+}
+
+.button-red {
+  margin: 0px 0px 0px 450px;
+  height: 28px;
+  width: 70px;
+  font: 14px;
+  // position: absolute;
+  // top: 0;
+  bottom: 0;
+  padding: 4px 6px;
+  background: #fff;
+  border-radius: 3px;
+  border: 1px solid #ea352d;
+  color: #ea352d;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.single-inner {
+  height: 318.09px;
+  width: 700px;
+  font: 14px;
+  background-color: #ffffff;
+  padding: 64px;
+  color: #333;
+}

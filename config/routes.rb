@@ -6,7 +6,16 @@ Rails.application.routes.draw do
     omniauth_callbacks: 'users/omniauth_callbacks'
   }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root to: "products#index"
 
+  # root to: "cards#edit"
+
+  resources :users, only: [:edit,:show,:index]
+
+  resources :products
+  resources :mypage
+
+  resources :users, only: [:edit,:show] do
     member do 
       get 'signout'
     end

@@ -23,9 +23,14 @@
               .main__line__contener__form__upload__image.clearfix
                 .main__line__contener__form__upload__image__container
                   .main__line__contener__form__upload__image__container__sell
-              = f.label :image, class: '#' do
+              = f.label :image, class: '#',for: 'product_product_images_attributes_0_image' do
                 .main__line__contener__form__upload__image__box
-                  = f.file_field :image, class: 'hidden'
+
+                  = f.fields_for :product_images do |image|
+                    .js-file_group{"data-id":image.index}
+                      = image.file_field :image, class: 'hidden',"data-id":image.index
+
+                  -# = f.file_field :image, class: 'hidden'
                   %p.list
                     ドラッグアンドドロップ
                     またはクリックしてファイルをアップロード
@@ -60,6 +65,8 @@
                 配送料の負担
               .main__line__contener__item__send__right__burden-form
                 = f.collection_select :fee, Burden.all, :id, :name, prompt: "--", class: 'select-burden'
+              .aaaaa
+                = f.collection_select :method, Delivery.all, :id, :name, prompt: "--", class: 'select-burden'
               .main__line__contener__item__send__right__area
                 発送元の地域
               .main__line__contener__item__send__right__area-form

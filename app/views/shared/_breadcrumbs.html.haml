@@ -1,29 +1,12 @@
--# - case params.values_at :controller, :action
+- case params.values_at :controller, :action
 
--# - when ['users', 'index']
--#   - breadcrumb :mypage
+- when ['users', 'show']
+  - breadcrumb :mypage
 
--# - when ['users', 'show']
--#   - breadcrumb :mypage
+- when ['users', 'sessions_destroy']
+  - breadcrumb :sign_out
 
--# - when ['mypage_card', 'index']
--#   - breadcrumb :mypage
--#   - breadcrumb :mypage_card
+- when ['product', 'show']
+  - breadcrumb :product
 
--# - when ['mypage_card', 'new']
--#   - breadcrumb :mypage
--#   - breadcrumb :credit_card_information
-
--# - when ['user_profile', 'new']
--#   - breadcrumb :mypage
--#   - breadcrumb :profile
-
--# - when ['user_identifications', 'new']
--#   - breadcrumb :mypage
--#   - breadcrumb :person_info_registration
-
--# - when ['user_profile', 'edit']
--#   - breadcrumb :mypage
--#   - breadcrumb :logout
-
--# = breadcrumbs separator: " &nbsp; &nbsp;&#12297;&nbsp; "
+= breadcrumbs separator: " &nbsp; &nbsp;&#12297;&nbsp; "

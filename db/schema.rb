@@ -48,25 +48,25 @@ ActiveRecord::Schema.define(version: 20191208055542) do
   end
 
   create_table "product_images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "image",      null: false
-    t.integer  "product_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "product_id",               null: false
+    t.text     "image",      limit: 65535, null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
     t.index ["product_id"], name: "index_product_images_on_product_id", using: :btree
   end
 
   create_table "products", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "name",                      null: false
-    t.integer  "price",                     null: false
-    t.text     "description", limit: 65535, null: false
-    t.integer  "condition",                 null: false
-    t.integer  "area",                      null: false
-    t.integer  "size",                      null: false
-    t.integer  "fee",                       null: false
-    t.integer  "date",                      null: false
-    t.integer  "brand_id"
-    t.integer  "category_id",               null: false
     t.integer  "user_id",                   null: false
+    t.string   "name",                      null: false
+    t.text     "description", limit: 65535, null: false
+    t.integer  "category_id",               null: false
+    t.string   "size",                      null: false
+    t.integer  "brand_id",                  null: false
+    t.string   "status",                    null: false
+    t.string   "fee",                       null: false
+    t.string   "area",                      null: false
+    t.string   "date",                      null: false
+    t.integer  "price",                     null: false
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
     t.integer  "method"

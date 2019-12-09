@@ -1,6 +1,8 @@
 .body
 
   = render "shared/productsindexheader/" 
+  - breadcrumb :product
+  = render partial:"shared/breadcrumbs"
 
   .item-field
     .item-name
@@ -131,6 +133,6 @@
       %li.social-icon.pinterest
         %a.social-media__icons--link{ href: "#", target: "_blank" }
           %i.fa.fa-pinterest.fa-2x
-  = render 'shared/breadcrumbs'
+  = render partial:"shared/breadcrumbs"
   = render 'shared/productsindexadvertisement'
   = render 'shared/productsindexfooter'

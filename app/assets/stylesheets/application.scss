@@ -16,19 +16,16 @@
 
 // mypage
 @import "mypage/mypage-nav";
-@import "mypage/mypage_top";
-
-
 
 @import "products/products_index";
 @import "products/products_new";
 @import "products/products_show";
 
 //@import "users/mypage-nav";
-//@import "users/mypage_top";
 @import "users/users_edit";
 //@import "users/users";
 @import "users/signout";
+@import "users/users_show";
 
 @import "purchase/index";
 

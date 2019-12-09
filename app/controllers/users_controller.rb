@@ -5,8 +5,8 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
-    @nickname = user.nickname
-    @products = user.products
+    @nickname = @user.nickname
+    # @products = @user.products
   end
 
   def index
@@ -15,4 +15,5 @@ class UsersController < ApplicationController
   def signout
     @user = User.find(params[:id])
   end
+
 end

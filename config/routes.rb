@@ -7,14 +7,11 @@ Rails.application.routes.draw do
   }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  root to: "products#index"
-  resources :users, only: [:edit,:show,:index]
-
-  resources :products
   resources :mypage
 
   root to: "products#index"
-  resources :users, only: [:edit,:show] do
+
+  resources :users, only: [:edit,:show,:index,:destroy,:update] do
     member do 
       get 'signout'
     end
@@ -27,7 +24,7 @@ Rails.application.routes.draw do
   end
 
 
-  resources :product_images, only: [:edit, :update, :destroy] do
+  resources :product_images do
     collection do
       post :upload
     end

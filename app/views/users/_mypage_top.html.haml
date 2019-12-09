@@ -2,7 +2,6 @@
   = render partial:"shared/productsindexheader"
   = render partial:"shared/breadcrumbs"
   .wrapper2
-    = @user.nickname
     %main.l--container
       .l--content
         %section.mypage--user--icon
@@ -10,7 +9,7 @@
             %figure.mypage--user--icon__a__figure
               %img.mypage--user--icon__a__figure__img
             %h2.bold--team 
-              -#= current_user.nickname
+              = current_user.nickname
             .mypage--number
               %div.mypage--number__review
                 評価

@@ -1,25 +1,19 @@
 .body {
   position: relative;
   min-height: 100%;
-  background: #f5f5f5;
+  background: rgb(245, 245, 245);
   margin: 0;
   padding: 0;
 
 
   .contener {
-    padding: 0 0 220px;
-    background-repeat: no-repeat;
-    margin: 0;
-    border-style: solid;
-    border-width: 0;
 
 
-    .header {
+
+    .top {
       height: 128px;
       text-align: center;
-      background-repeat: no-repeat;
-      margin: 0;
-      padding: 0;
+      background: rgb(245, 245, 245);
       &__image {
         margin: 40px 0 0;
         display: inline-block;
@@ -34,18 +28,11 @@
 
     .main {
       display: block;
-      background-repeat: no-repeat;
-      margin: 0;
-      padding: 0;
       &__line {
         width: 700px;
         margin: 0 auto;
         background: #fff;
-        padding: 0;
         &__contener {
-          background-repeat: no-repeat;
-          margin: 0;
-          padding: 0;
           &__head {
             padding: 32px 16px;
             font-size: 22px;
@@ -208,6 +195,29 @@
                     cursor: pointer;
                   }
                 }
+                &__size {
+                  margin: 40px 0 0;
+                  font-weight: 600;
+                  display: inline-block;
+                }
+                  &__size-form {
+                    margin: 8px 0 0;
+                    position: relative;
+                    background: #fff;
+                  }
+                
+                &__brand {
+                  margin: 40px 0 0;
+                  font-weight: 600;
+                  display: inline-block;
+                }
+                  &__brand-form {
+                    margin: 8px 0 0;
+                    position: relative;
+                    background: #fff;
+                  }
+                
+
                 &__state {
                   margin: 40px 0 0;
                   font-weight: 600;
@@ -274,6 +284,16 @@
                     line-height: 1.5;
                     cursor: pointer;
                   }
+                }
+                &__method {
+                  margin: 40px 0 0;
+                  font-weight: 600;
+                  display: inline-block;
+                }
+                &__method-form {
+                  margin: 8px 0 0;
+                  position: relative;
+                  background: #fff;
                 }
                 &__area {
                   margin: 40px 0 0;
@@ -489,4 +509,38 @@ select {
   background: #fff;
   line-height: 1.5;
   font-size: 16px;
+}
+
+.require {
+  background: #ea352d;
+  margin: 0 0 0 8px;
+  padding: 2px 4px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  vertical-align: top;
+  display: inline-block;
+}
+
+.require1 {
+  background: #ea352d;
+  margin: 0 0 0 8px;
+  padding: 2px 4px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  vertical-align: middle;
+  display: inline-block;
+  height: 22px;
+  line-height: 22px;
+}
+
+.require2 {
+  background: #ccc;
+  margin: 0 0 0 8px;
+  padding: 2px 4px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  vertical-align: top;
 }

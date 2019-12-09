@@ -15,10 +15,10 @@
         .signin__account
           .link__facebook
             %i.fa.fa-facebook-official
-            = link_to "facebookでログイン" 
+            = link_to "facebookでログイン" ,user_facebook_omniauth_authorize_path
           .link__google
             %i.fa.fa-google
-            = link_to "Googleでログイン" 
+            = link_to "Googleでログイン" ,user_google_oauth2_omniauth_authorize_path
           .form__group
             = f.email_field :email, class: "input__nomal", placeholder: "メールアドレス"
           .form__group

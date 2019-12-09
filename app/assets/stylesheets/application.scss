@@ -16,9 +16,8 @@
 
 // mypage
 @import "mypage/mypage-nav";
-@import "mypage/mypage_top";
-@import "mypage/mypage_credit";
 
+@import "mypage/mypage_credit";   //これなんですか
 
 
 @import "products/products_index";
@@ -26,10 +25,10 @@
 @import "products/products_show";
 
 //@import "users/mypage-nav";
-//@import "users/mypage_top";
 @import "users/users_edit";
 //@import "users/users";
 @import "users/signout";
+@import "users/users_show";
 
 @import "purchase/index";
 

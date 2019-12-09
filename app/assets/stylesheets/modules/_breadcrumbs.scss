@@ -1,25 +1,23 @@
-.breadcrumbs-box {
-  width: 100%;
-  height: 48px;
-  background-color: white;
-  border-top: solid 1px whitesmoke;
+.breadcrumbs {
+  position: relative;
+  border-top: 1px solid #eee;
   box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
-  .breadcrumbs {
-    display: block;
-    width: 1020px;
-    margin: 0 auto;
+  background: #fff;
+  width: 1448px;
+  height: 48px;
+  a:first-child {
     line-height: 48px;
-    & span {
-      font-weight: bold;
-    }
-    a {
-      text-decoration: none;
-      color: inherit;
-      }
+    text-decoration: none;
+    color: #333;
+    margin-left: 210px;
   }
-    #breadcrumbs-icon {
-      margin: 0 8px;
-      font-size: 10px;
-      color: gray;
-    }
+  a {
+    text-decoration: none;
+    color: #333;
+    line-height: 48px;
+  }
+  .current {
+    font-weight: bold;
+    line-height: 48px;
+  }  
 }

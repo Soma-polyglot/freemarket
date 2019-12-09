@@ -253,6 +253,39 @@
             }
           }
         }
+        &__new-user {
+          text-align: center;
+          .registration {
+          background-color: rgb(234, 53, 45);
+          color: rgb(255, 255, 255);
+          display: block;
+          font-size: 14px;
+          border-width: 1px;
+          border-style: solid;
+          border-color: rgb(234, 53, 45);
+          border-image: initial;
+          border-radius: 4px;
+          padding: 8px 10px;
+          text-decoration: none;
+          }
+        }
+        &__login {
+          text-align: center;
+          margin-left: 11px;
+          .login-btn {
+            background-color: rgb(255, 255, 255);
+            color: rgb(0, 149, 238);
+            display: block;
+            font-size: 14px;
+            border-width: 1px;
+            border-style: solid;
+            border-color: rgb(0, 149, 238);
+            border-image: initial;
+            border-radius: 4px;
+            padding: 8px 10px;
+            text-decoration: none;
+          }
+        }
       }
     }
   }

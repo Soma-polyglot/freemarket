@@ -1,7 +1,8 @@
 .wrapper
-  -#= render partial:"shared/header"
-  -#= render partial:"shared/bread_crumbs"
+  = render partial:"shared/productsindexheader"
+  = render partial:"shared/breadcrumbs"
   .wrapper2
+    = @user.nickname
     %main.l--container
       .l--content
         %section.mypage--user--icon
@@ -67,7 +68,7 @@
               %ul.mypage--item--list
                 %li.mypage--item--not--found 取引中の商品がありません
       .lside
-        = render partial:"mypage/mypage-nav"
+        = render partial:"users/mypage-nav"
  
-  -#= render partial:"shared/footer"
+  = render partial:"shared/productsindexfooter"
   

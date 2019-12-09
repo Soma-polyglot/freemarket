@@ -23,11 +23,17 @@
               .main__line__contener__form__upload__image.clearfix
                 .main__line__contener__form__upload__image__container
                   .main__line__contener__form__upload__image__container__sell
+              = f.label :image, class: '#',for: 'product_product_images_attributes_0_image' do
                 .main__line__contener__form__upload__image__box
+
+                  = f.fields_for :product_images do |image|
+                    .js-file_group{"data-id":image.index}
+                      = image.file_field :image, class: 'hidden',"data-id":image.index
+
+                  -# = f.file_field :image, class: 'hidden'
                   %p.list
                     ドラッグアンドドロップ
                     またはクリックしてファイルをアップロード
-                = f.file_field :image, class: 'hidden'
                     
           .main__line__contener__item
             .main__line__contener__item__name
@@ -44,12 +50,13 @@
               .main__line__contener__item__detail__right__category
                 カテゴリー
               .main__line__contener__item__detail__right__category-form
-                =f.select :category,['---','レディース','メンズ','ベビー・キッズ','インテリア・住まい・小物','本・音楽・ゲーム','おもちゃ・ホビー・グッズ','コスメ・香水・美容','家電・スマホ・カメラ','スポーツ・レジャー','ハンドメイド','チケット','自動車・オートバイ','その他'], {}, class: "select-category"
-
+                = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name, prompt: "--", class: 'select-category'
+                = f.collection_select :size, Pattern.all, :id, :name, prompt: "--", class: 'select-size'
+                = f.text_field :brand_id, class: 'input-name', placeholder: "  例)シャネル"
               .main__line__contener__item__detail__right__state
                 商品の状態
               .main__line__contener__item__detail__right__state-form
-                =f.select :status,['---','新品、未使用','未使用に近い','目立った傷や汚れなし','やや傷や汚れあり','傷や汚れあり','全体的に状態が悪い'], {}, class: "select-state"
+                = f.collection_select :condition, Dondition.all, :id, :name, prompt: "--", class: 'select-state'
 
           .main__line__contener__item__send.clearfix
             %h3.left 配送について
@@ -57,18 +64,18 @@
               .main__line__contener__item__send__right__burden
                 配送料の負担
               .main__line__contener__item__send__right__burden-form
-                =f.select :fee,['---','送料込み(出品者負担)','着払い(購入者負担)'], {}, class: "select-burden"
-              
+                = f.collection_select :fee, Burden.all, :id, :name, prompt: "--", class: 'select-burden'
+              .aaaaa
+                = f.collection_select :method, Delivery.all, :id, :name, prompt: "--", class: 'select-burden'
               .main__line__contener__item__send__right__area
                 発送元の地域
               .main__line__contener__item__send__right__area-form
-                = f.select :area,['---','北海道', '青森県', '岩手県', '宮城県', '秋田県', '山形県', '福島県', '茨城県', '栃木県', '群馬県', '埼玉県', '千葉県', '東京都', '神奈川県', '新潟県', '富山県', '石川県', '福井県', '山梨県', '長野県', '岐阜県', '静岡県', '愛知県', '三重県', '滋賀県', '京都府', '大阪府', '兵庫県', '奈良県', '和歌山県', '鳥取県', '島根県', '岡山県', '広島県', '山口県', '徳島県', '香川県', '愛媛県', '高知県', '福岡県', '佐賀県', '長崎県', '熊本県', '大分県', '宮城県', '鹿児島県', '沖縄県'], {}, class: "select-area"
+                = f.collection_select :area, Prefecture.all, :id, :name, prompt: "--", class: 'select-area'
                 
               .main__line__contener__item__send__right__date
                 発送までの日数
               .main__line__contener__item__send__right__date-form
-                =f.select :date,['---','1~2日で発送','2~3日で発送','4~7日で発送'], {}, class: "select-date"
-          
+                = f.collection_select :date, Sending.all, :id, :name, prompt: "--", class: 'select-date'
           .main__line__contener__item__price.clearfix
             %h3.left 販売価格(300~9,999,999)
             .main__line__contener__item__price__right 
@@ -80,7 +87,7 @@
                     .main__line__contener__item__price__right__top__box__right
                       ¥
                       .main__line__contener__item__price__right__top__box__right__box
-                        = f.text_field :name, class: 'input-price', placeholder: "例）300  "
+                        = f.text_field :price, class: 'input-price', placeholder: "例）300  "
                   
                 .main__line__contener__item__price__right__middle.clearfix
                   .main__line__contener__item__price__right__middle__left

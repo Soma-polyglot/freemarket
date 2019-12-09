@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
   require 'payjp'
   before_action :set_card, only: [:purchase,:pay]
+  before_action :set_product, only: [:show,:purchase,:pay]
 
   def index
     @products = Product.limit(10).order(created_at: :desc)
@@ -15,7 +16,6 @@ class ProductsController < ApplicationController
   end
 
   def show    
-    @product = Product.find(params[:id])
   end
 
   def new
@@ -30,7 +30,6 @@ class ProductsController < ApplicationController
 
   def purchase
     @user = User.find(params[:id])
-    @product = Product.find(params[:id])
     #Cardテーブルは前回記事で作成、テーブルからpayjpの顧客IDを検索
     if @card.blank?
       #登録された情報がない場合にカード登録画面に移動
@@ -45,7 +44,6 @@ class ProductsController < ApplicationController
   end
 
   def pay
-    @product = Product.find(params[:id])
     Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
     Payjp::Charge.create(
     :amount => @product.price, #支払金額を入力（itemテーブル等に紐づけても良い）
@@ -66,4 +64,7 @@ class ProductsController < ApplicationController
     params.require(:product).permit(:name, :description, :status, :fee, :area, :date, :price )
   end
    
+  def set_product
+    @product = Product.find(params[:id])
+  end
 end

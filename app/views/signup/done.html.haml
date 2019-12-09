@@ -14,7 +14,7 @@
           = "会員登録が完了しました。"
       .form__group
         -# = link_to "メルカリをはじめる",destroy_user_session_path, method: :delete,class: "signup__submit__btn"
-        = link_to "メルカリをはじめる",purchase_index_path,class: "signup__submit__btn"
+        = link_to "メルカリをはじめる",products_path,class: "signup__submit__btn"
 
   = render "simple_footer"
 

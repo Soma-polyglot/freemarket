@@ -1,0 +1,25 @@
+.wrapper
+  = render partial:"shared/productsindexheader"
+  = render partial:"shared/breadcrumbs"
+  .wrapper2
+    %main.l--container
+      .m--content
+        .chapter-head お支払い方法
+        .single-inner
+          .section
+            %h3.credit クレジットカード一覧
+            %ul.setting-pyment-list
+            .figure
+              %img{alt: "jcb", height: "20", src: "assets/jcb-card.png", width: "26"}/
+              %input.button.button-red{type:"submit", value:"削除する"}/
+            .settings-payment-num **** **** 1234
+            .settings-payment-num2 04 / 24
+            .buttons
+          
+          .buttons
+            =link_to "支払い方法について>", method: :get, class:"abc"
+
+        
+      .lside
+        = render partial:"users/mypage-nav"
+  = render partial:"shared/productsindexfooter"

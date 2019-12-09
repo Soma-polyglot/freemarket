@@ -6,14 +6,15 @@ Rails.application.routes.draw do
     omniauth_callbacks: 'users/omniauth_callbacks'
   }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-
   root to: "products#index"
+
+  # root to: "cards#edit"
+
   resources :users, only: [:edit,:show,:index]
 
   resources :products
   resources :mypage
 
-  root to: "products#index"
   resources :users, only: [:edit,:show] do
     member do 
       get 'signout'
@@ -23,18 +24,23 @@ Rails.application.routes.draw do
   resources :products do
     collection do 
       get 'pagenotfound'
+      get 'done'
+    end
+    member do
+      get 'purchase'
+      post 'pay'
     end
   end
 
 
-  resources :product_images, only: [:edit, :update, :destroy] do
+  resources :product_images do
     collection do
       post :upload
     end
   end
 
   resources :posts
-  resources :cards, only: [:new, :create]
+  resources :cards, only: [:new, :create, :edit]
   resources :signup, only: [:create] do
     collection do
       get 'signup_link'
@@ -45,11 +51,4 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :purchase, only: [:index] do
-    collection do
-      get 'index', to: 'purchase#index'
-      post 'pay', to: 'purchase#pay'
-      get 'done', to: 'purchase#done'
-    end
-  end
 end

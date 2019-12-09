@@ -1,0 +1,62 @@
+.wrapper__purchase
+
+  = render "signup/simple_header"
+
+  %main.purchase__main
+    %h2.purchase__main__header
+      = "購入内容の確認"
+
+    .purchase__main__content
+      .buy__image
+        .buy__image__url
+          = image_tag @product.product_images.first.image.ext
+        .buy__image__information
+          = @product.name
+          %br/
+          = "¥"
+          = @product.price
+          = "（税込）送料込み"
+      .buy__price
+        .buy__price__title
+          = "支払い金額"
+        .buy__price__main
+          = "¥"
+          = @product.price
+      .payment__method.clearfix
+        .payment__method__title
+          = "支払い方法"
+        .payment__method__change
+          =link_to "変更する", "#"
+      .payment__method__information
+        = "クレジットカード"
+        %br/
+        - if @default_card_information.blank?
+          %br /
+        - else
+          -#以下カード情報を表示
+          = "**** **** **** " + @default_card_information.last4
+          %br/
+          = "有効期限"
+          - exp_month = @default_card_information.exp_month.to_s
+          - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+          = exp_month + " / " + exp_year
+      .delivery
+        .delivery__title
+          = "配送先"
+        .delivery__method__change
+          =link_to "変更する", "#"
+        .delivery__main
+          = "〒"
+          = current_user.address.postal_code
+          %br/
+          = current_user.address.prefecture
+          = current_user.address.city
+          = current_user.address.address
+          = current_user.address.building
+          %br/
+          = current_user.nickname
+      .purchase__btn
+        = form_tag(action: :pay, method: :post) do
+          %button 購入する
+
+  = render "signup/simple_footer"

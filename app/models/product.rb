@@ -1,15 +1,14 @@
 class Product < ApplicationRecord
-  # accepts_nested_attributes_for :product_image
-  # accepts_nested_attributes_for :brand
+
   has_many   :comments
-  has_many   :users
   has_many   :product_images
   belongs_to :user
   belongs_to :brand
   belongs_to :category
-  belongs_to :area
-  belongs_to :size
-  belongs_to :conditon
+  belongs_to :user
+
+  accepts_nested_attributes_for :product_images
+
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :prefecture
@@ -17,6 +16,8 @@ class Product < ApplicationRecord
   belongs_to_active_hash :burden
   belongs_to_active_hash :sending
   belongs_to_active_hash :pattern
+  belongs_to_active_hash :delivery
+
 
   def previous
     Product.where("id < ?", self.id).order("id DESC").first

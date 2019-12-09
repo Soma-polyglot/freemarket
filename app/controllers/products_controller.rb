@@ -21,15 +21,15 @@ class ProductsController < ApplicationController
   end
 
   def create
+    # binding.pry
     Product.create(product_params)
-    #redirect_to root_path
+    redirect_to root_path
   end
   
   private
 
   def product_params
-    params.require(:product).permit(:name, :category_id, :description, :condition, :fee, :area, :date, :price )
-    #.merge(user_id: current_user.id)
+    params.require(:product).permit(:name, :description, :category_id, :size, :brand_id, :condition, :fee, :area, :date, :price, :user_id, :method, product_images_attributes:[:image] ) .merge(user_id: 1)
   end
    
 end

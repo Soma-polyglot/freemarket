@@ -72,6 +72,7 @@
     = link_to '#' do
       %p 電話番号の確認
       %i.fa.fa-chevron-right
-    = link_to "#" do
-      %p ログアウト
-      %i.fa.fa-chevron-right
+    - if user_signed_in?
+      = link_to signout_user_path(current_user.id) do
+        %p ログアウト
+        %i.fa.fa-chevron-right

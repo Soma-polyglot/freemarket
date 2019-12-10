@@ -1,8 +1,6 @@
 .body
 
   = render "shared/productsindexheader/" 
-  - breadcrumb :product
-  = render partial:"shared/breadcrumbs"
 
   .item-field
     .item-name
@@ -41,7 +39,7 @@
             %td
               = link_to "#" do
                 %div
-                  -# = @product.category.ancestry
+                  = @product.category.ancestry
               = link_to "#" do
                 .item-category
                   = fa_icon "arrow-right", class: "icon"
@@ -87,7 +85,7 @@
       = link_to "商品を編集する", edit_product_path, method: :get, class: "button"
       = link_to "商品を削除する", product_path, method: :delete, class: "button1"
     - else
-    　= link_to "購入画面に進む", purchase_product_path(@product.id), class: "button"
+      = link_to "購入画面に進む", purchase_product_path(@product.id), class: "button"
 
     .item-description
       .item-description__content
@@ -138,6 +136,8 @@
       %li.social-icon.pinterest
         %a.social-media__icons--link{ href: "#", target: "_blank" }
           %i.fa.fa-pinterest.fa-2x
+
+  - breadcrumb :product
   = render partial:"shared/breadcrumbs"
   = render 'shared/productsindexadvertisement'
   = render 'shared/productsindexfooter'

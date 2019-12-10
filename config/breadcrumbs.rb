@@ -5,8 +5,8 @@ crumb :root do
 end
 
 # マイページ
-crumb :mypage do
-  link 'マイページ', user_path
+crumb :mypage do 
+  link 'マイページ', user_path(current_user.id)
   parent :root
 end
 
@@ -26,6 +26,12 @@ end
 # プロフィール
 crumb :profile do 
   link "プロフィール", edit_user_path
+  parent :mypage
+end
+
+# 本人情報
+crumb :personal_information do 
+  link "本人情報の登録", users_path
   parent :mypage
 end
 

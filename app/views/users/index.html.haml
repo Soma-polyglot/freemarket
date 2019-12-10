@@ -2,7 +2,9 @@
 
   .container
   = render "shared/productsindexheader/" 
-  = render 'shared/breadcrumbs'
+
+  - breadcrumb :personal_information
+  = render partial:"shared/breadcrumbs"
 
   .container.clearfix
     .container-main

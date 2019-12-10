@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   resources :products
   resources :mypage
 
-  resources :users, only: [:edit,:show] do
+  resources :users, only: [:index,:edit,:show] do
     member do 
       get 'signout'
     end

@@ -16,9 +16,12 @@
 
 // mypage
 @import "mypage/mypage-nav";
+
 @import "mypage/mypage_top";
 @import "mypage/mypage_credit";
 @import "mypage/mypage_edit";
+// @import "mypage/mypage-profile";
+
 
 
 
@@ -27,10 +30,10 @@
 @import "products/products_show";
 
 //@import "users/mypage-nav";
-//@import "users/mypage_top";
 @import "users/users_edit";
 //@import "users/users";
 @import "users/signout";
+@import "users/users_show";
 
 @import "purchase/index";
 
@@ -41,3 +44,4 @@
 @import "owl.theme.default";
 
 @import "modules/purchase";
+

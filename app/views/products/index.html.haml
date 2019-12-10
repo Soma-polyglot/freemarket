@@ -6,7 +6,6 @@
     .second__flame
 
       = link_to "aaaa",posts_path
-      -# = link_to "bbbb",new_post_path
 
       .second__flame__campaign
         = image_tag "/assets/free.jpg", class: "image"
@@ -35,7 +34,7 @@
 
 
           .second__flame__item__box__bottom
-            - @redy.each do |f|
+            - @RADY.each do |f|
               %a.second__flame__item__box__bottom__flame{ href: "/products/#{f.id}", method: "Get"}
                 .second__flame__item__box__bottom__flame__line
                   
@@ -60,7 +59,7 @@
               もっと見る　＞
 
           .second__flame__item__box__bottom
-            - @mens.each do |f|
+            - @MENS.each do |f|
               %a.second__flame__item__box__bottom__flame{ href: "/products/#{f.id}", method: "Get"}
                 .second__flame__item__box__bottom__flame__line
                   
@@ -86,7 +85,7 @@
               もっと見る　＞
 
           .second__flame__item__box__bottom
-            - @camera.each do |f|
+            - @CAMERA.each do |f|
               %a.second__flame__item__box__bottom__flame{ href: "/products/#{f.id}", method: "Get"}
                 .second__flame__item__box__bottom__flame__line
                   
@@ -112,7 +111,7 @@
               もっと見る　＞
 
           .second__flame__item__box__bottom
-            - @toys.each do |f|
+            - @TOY.each do |f|
               %a.second__flame__item__box__bottom__flame{ href: "/products/#{f.id}", method: "Get"}
                 .second__flame__item__box__bottom__flame__line
                   
@@ -152,7 +151,7 @@
               もっと見る　＞
             
           .second__flame__item__box__bottom
-            - @chanel.each do |f|
+            - @CHANEL.each do |f|
               %a.second__flame__item__box__bottom__flame{ href: "/products/#{f.id}", method: "Get"}
                 .second__flame__item__box__bottom__flame__line
                   
@@ -177,7 +176,7 @@
               もっと見る　＞
 
           .second__flame__item__box__bottom
-            - @vuitton.each do |f|
+            - @VUITTON.each do |f|
               %a.second__flame__item__box__bottom__flame{ href: "/products/#{f.id}", method: "Get"}
                 .second__flame__item__box__bottom__flame__line
                   
@@ -203,7 +202,7 @@
 
               もっと見る ＞
           .second__flame__item__box__bottom
-            - @supreme.each do |f|
+            - @SUPREME.each do |f|
               %a.second__flame__item__box__bottom__flame{ href: "/products/#{f.id}", method: "Get"}
                 .second__flame__item__box__bottom__flame__line
                  
@@ -228,7 +227,7 @@
               もっと見る　＞
 
           .second__flame__item__box__bottom
-            - @nike.each do |f|
+            - @NIKE.each do |f|
               %a.second__flame__item__box__bottom__flame{ href: "/products/#{f.id}", method: "Get"}
                 .second__flame__item__box__bottom__flame__line
                   

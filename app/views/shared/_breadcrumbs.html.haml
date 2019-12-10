@@ -6,7 +6,10 @@
 - when ['users', 'sessions_destroy']
   - breadcrumb :sign_out
 
-- when ['product', 'show']
+- when ['products', 'show']
   - breadcrumb :product
+
+- when ['users', 'edit']
+  - breadcrumb :profile
 
 = breadcrumbs separator: " &nbsp; &nbsp;&#12297;&nbsp; "

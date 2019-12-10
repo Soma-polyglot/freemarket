@@ -17,9 +17,16 @@ crumb :sign_out do
 end
 
 # 商品詳細
-crumb :product do 
-  link "product.name", product_path
+crumb :product do |product_item|
+  product_item = Product.find_by(id: params[:id])
+  link product_item.name, product_path
   parent :root
+end
+
+# プロフィール
+crumb :profile do 
+  link "プロフィール", edit_user_path
+  parent :mypage
 end
 
 

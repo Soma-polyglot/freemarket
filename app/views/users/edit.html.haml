@@ -1,13 +1,9 @@
 .wrapper
   = render partial:"shared/productsindexheader"
+  - breadcrumb :profile
   = render partial:"shared/breadcrumbs"
   .container
     .container-main
-
-
-
-
-
       .title プロフィール
       .form-a
         .form-a-inner
@@ -17,7 +13,6 @@
       ログアウトボタンのコードに使う予定
     .lside
       = render partial:"users/mypage-nav"
-    
 
   = render partial:"shared/productsindexfooter"
   

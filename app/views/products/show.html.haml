@@ -39,7 +39,7 @@
             %td
               = link_to "#" do
                 %div
-                  -# = @product.category.ancestry
+                  = @product.category.ancestry
               = link_to "#" do
                 .item-category
                   = fa_icon "arrow-right", class: "icon"
@@ -137,6 +137,8 @@
       %li.social-icon.pinterest
         %a.social-media__icons--link{ href: "#", target: "_blank" }
           %i.fa.fa-pinterest.fa-2x
-  = render 'shared/breadcrumbs'
+
+  - breadcrumb :product
+  = render partial:"shared/breadcrumbs"
   = render 'shared/productsindexadvertisement'
   = render 'shared/productsindexfooter'

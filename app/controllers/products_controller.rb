@@ -4,7 +4,7 @@ class ProductsController < ApplicationController
   before_action :set_product, only: [:show,:purchase,:pay,:edit,:update,:destroy]
 
   def index
-    
+
     @rady = Product.where(category_id: 1)
     @RADY = @rady.limit(10).order(created_at: :desc)
 
@@ -57,9 +57,6 @@ class ProductsController < ApplicationController
   def update
     @product.update(product_params)
   end
-
-  
-  private
   
   def purchase
     @user = User.find(params[:id])

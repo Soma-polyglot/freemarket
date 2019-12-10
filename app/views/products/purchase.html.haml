@@ -9,7 +9,7 @@
     .purchase__main__content
       .buy__image
         .buy__image__url
-          = image_tag @product.product_images.first.image.url
+          = image_tag @product.product_images.first.image.ext
         .buy__image__information
           = @product.name
           %br/

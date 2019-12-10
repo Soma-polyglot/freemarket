@@ -87,7 +87,7 @@
       = link_to "商品を編集する", edit_product_path, method: :get, class: "button"
       = link_to "商品を削除する", product_path, method: :delete, class: "button1"
     - else
-    　= link_to "購入画面に進む", purchase_product_path(@product.id), class: "button"
+      = link_to "購入画面に進む", purchase_product_path(@product.id), class: "button"
 
     .item-description
       .item-description__content

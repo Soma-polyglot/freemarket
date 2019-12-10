@@ -16,8 +16,13 @@
 
 // mypage
 @import "mypage/mypage-nav";
+
+@import "mypage/mypage_top";
+@import "mypage/mypage_credit";
+@import "mypage/mypage_edit";
 // @import "mypage/mypage-profile";
-@import "mypage/mypage_credit";   //これなんですか
+
+
 
 
 @import "products/products_index";

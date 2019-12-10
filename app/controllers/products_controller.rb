@@ -13,28 +13,21 @@ class ProductsController < ApplicationController
     # @vuitton = @products.eager_load(:brand).where(id: 2)
     # @supreme = @products.eager_load(:brand).where(id: 3)
     # @nike = @products.eager_load(:brand).where(id: 4)
-    @rady = Product.eager_load(:category).where(id: 1)
+    @rady = Product.where(category_id: 1)
     @RADY = @rady.limit(10).order(created_at: :desc)
-
-    @mens = Product.eager_load(:category).where(id: 2)
+    @mens = Product.where(category_id: 2)
     @MENS = @mens.limit(10).order(created_at: :desc)
-
-    @camera = Product.eager_load(:category).where(id: 3)
+    @camera = Product.where(category_id: 3)
     @CAMERA = @camera.limit(10).order(created_at: :desc)
-
-    @toy = Product.eager_load(:category).where(id: 4)
+    @toy = Product.where(category_id: 4)
     @TOY = @toy.limit(10).order(created_at: :desc)
-
-    @chanel = Product.eager_load(:brand).where(id: 1)
+    @chanel = Product.where(brand_id: 1)
     @CHANEL = @chanel.limit(10).order(created_at: :desc)
-
-    @vuitton = Product.eager_load(:brand).where(id: 2)
+    @vuitton = Product.where(brand_id: 2)
     @VUITTON = @vuitton.limit(10).order(created_at: :desc)
-
-    @supreme = Product.eager_load(:brand).where(id: 3)
+    @supreme = Product.where(brand_id: 3)
     @SUPREME = @supreme.limit(10).order(created_at: :desc)
-
-    @nike = Product.eager_load(:brand).where(id: 4)
+    @nike = Product.where(brand_id: 4)
     @NIKE = @nike.limit(10).order(created_at: :desc)
 
   end

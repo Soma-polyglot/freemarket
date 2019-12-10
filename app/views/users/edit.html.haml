@@ -1,18 +1,22 @@
+-# mypage_edit.scss
 .wrapper
   = render partial:"shared/productsindexheader"
   - breadcrumb :profile
   = render partial:"shared/breadcrumbs"
-  .container
+  .main-container.clearfix
     .container-main
-      .title プロフィール
-      .form-a
-        .form-a-inner
-      .form-a-under
-      = form_for "#" do |f|
-        = f.text_area :a, placeholder: "よろしく"
-      ログアウトボタンのコードに使う予定
+      %h2.chapter_head プロフィール
+      .setting-profile-icon
+        .mypage--user--icon__a__figure
+          %img.mypage--user--icon__a__figure__img
+          %input.input-default{name: "nickname", placeholder: "例)AYA☆セール中", type: "text", value: "users"}/
+      .setting-profile-content
+        = form_for "#" do |f| 
+          = f.text_area :a, placeholder: "例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪"
+      
+      %button.comment-submit-btn{ type: "submit" }変更する
+      
     .lside
       = render partial:"users/mypage-nav"
 
   = render partial:"shared/productsindexfooter"
-  

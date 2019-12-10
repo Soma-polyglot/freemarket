@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:edit,:show,:index]
 
-  resources :products
+  
   resources :mypage
 
   resources :users, only: [:edit,:show] do

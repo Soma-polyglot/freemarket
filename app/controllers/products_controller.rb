@@ -1,18 +1,10 @@
 class ProductsController < ApplicationController
   require 'payjp'
   before_action :set_card, only: [:purchase,:pay]
-  before_action :set_product, only: [:show,:purchase,:pay]
+  before_action :set_product, only: [:show,:purchase,:pay,:edit,:update,:destroy]
 
   def index
-    # @products = Product.limit(10).order(created_at: :desc)
-    # @redy = @products.(:category).where(id: 1)
-    # @mens = @products.(:category).where(id: 2)
-    # @camera = @products.(:category).where(id: 3)
-    # @toys = @products.(:brand).where(id: 4)
-    # @chanel = @products.(:brand).where(id: 1)
-    # @vuitton = @products.(:brand).where(id: 2)
-    # @supreme = @products.(:brand).where(id: 3)
-    # @nike = @products.(:brand).where(id: 4)
+
     @rady = Product.where(category_id: 1)
     @RADY = @rady.limit(10).order(created_at: :desc)
 
@@ -54,18 +46,16 @@ class ProductsController < ApplicationController
 
 
   def destroy
-    product = Product.find(params[:id])
-    product.destroy
+    @product.destroy
     redirect_to root_path
   end
 
   def edit
-    @product = Product.find(params[:id])
+    @product.product_images.build
   end
 
   def update
-    product = Product.find(params[:id])
-    product.update(product_params)
+    @product.update(product_params)
   end
   
   def purchase

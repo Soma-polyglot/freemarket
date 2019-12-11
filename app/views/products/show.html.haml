@@ -80,6 +80,7 @@
         = @product.price.to_s(:delimited)
       %span.item-payment-box__tax (税込)
       %span.item-payment-box__shipping-fee 送料込み
+
     - if @product.status != 1
       - if user_signed_in? && current_user.id == @product.user_id
         = link_to "商品を編集する", edit_product_path, method: :get, class: "button"
@@ -106,6 +107,7 @@
         = link_to "#" do
           = fa_icon "lock"
           %span あんしん・あんぜんへの取り組み
+          
   .comment
     .comment__content
       .comment__content--box

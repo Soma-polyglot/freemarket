@@ -12,7 +12,7 @@ class Product < ApplicationRecord
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :prefecture
-  belongs_to_active_hash :dondition
+  belongs_to_active_hash :condition
   belongs_to_active_hash :burden
   belongs_to_active_hash :sending
   belongs_to_active_hash :pattern

@@ -17,7 +17,7 @@ class ProductsController < ApplicationController
     @toy = Product.where(category_id: 4)
     @TOY = @toy.limit(10).order(created_at: :desc)
 
-    @chanel = Product.where(brand_id: 1)
+    @chanel = Product.where(brand: 1)
     @CHANEL = @chanel.limit(10).order(created_at: :desc)
 
     @vuitton = Product.where(brand_id: 2)
@@ -31,7 +31,8 @@ class ProductsController < ApplicationController
 
   end
 
-  def show    
+  def show
+    
   end
 
   def new
@@ -58,7 +59,6 @@ class ProductsController < ApplicationController
   end
   
   def purchase
-    @user = User.find(params[:id])
     if @card.blank?
       redirect_to controller: "card", action: "new"
     else
@@ -75,6 +75,7 @@ class ProductsController < ApplicationController
     :customer => @card.customer_id, 
     :currency => 'jpy', 
   )
+  @product.update(status: 1)
   redirect_to root_path 
   end
 
@@ -86,7 +87,9 @@ class ProductsController < ApplicationController
   end
 
   def product_params
-    params.require(:product).permit(:name, :description, :category_id, :size, :brand_id, :condition, :fee, :area, :date, :price, :user_id, :method, product_images_attributes: [:image] ) .merge(user_id:current_user.id )
+
+    params.require(:product).permit(:name, :description, :category_id, :pattern_id, :brand_id, :condition_id, :burden_id, :prefecture_id, :sending_id, :price, :user_id, :delivery_id, product_images_attributes:[:image] ) .merge(user_id:current_user.id )
+
   end
    
   def set_product

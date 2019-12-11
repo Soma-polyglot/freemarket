@@ -56,22 +56,21 @@ ActiveRecord::Schema.define(version: 20191208055542) do
   end
 
   create_table "products", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "name",                      null: false
-    t.integer  "price",                     null: false
-    t.text     "description", limit: 65535, null: false
-    t.integer  "condition",                 null: false
-    t.integer  "area",                      null: false
-    t.integer  "size",                      null: false
-    t.integer  "fee",                       null: false
-    t.integer  "date",                      null: false
+    t.string   "name",                        null: false
+    t.integer  "price",                       null: false
+    t.text     "description",   limit: 65535, null: false
+    t.integer  "condition_id",                null: false
+    t.integer  "prefecture_id",               null: false
+    t.integer  "pattern_id",                  null: false
+    t.integer  "burden_id",                   null: false
+    t.integer  "sending_id",                  null: false
     t.integer  "brand_id"
-    t.integer  "category_id",               null: false
-    t.integer  "user_id",                   null: false
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
-    t.integer  "method"
+    t.integer  "category_id",                 null: false
+    t.integer  "user_id",                     null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.integer  "delivery_id"
     t.integer  "status"
-    t.index ["brand_id"], name: "index_products_on_brand_id", using: :btree
     t.index ["category_id"], name: "index_products_on_category_id", using: :btree
     t.index ["user_id"], name: "index_products_on_user_id", using: :btree
   end
@@ -109,7 +108,6 @@ ActiveRecord::Schema.define(version: 20191208055542) do
   add_foreign_key "addresses", "users"
   add_foreign_key "cards", "users"
   add_foreign_key "product_images", "products"
-  add_foreign_key "products", "brands"
   add_foreign_key "products", "categories"
   add_foreign_key "products", "users"
   add_foreign_key "sns_credentials", "users"

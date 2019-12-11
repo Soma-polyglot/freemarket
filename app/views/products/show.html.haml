@@ -1,6 +1,8 @@
 .body
 
   = render "shared/productsindexheader/" 
+  - breadcrumb :product
+  = render partial:"shared/breadcrumbs"
 
   .item-field
     .item-name
@@ -53,27 +55,28 @@
           %tr
             %th 商品のサイズ
             %td 
-              = @product.size
+              = @product.pattern.name
           %tr
             %th 商品の状態
             %td 
-              = @product.condition
+              = @product.condition.name
           %tr
             %th 配達料の負担
             %td 
-              = @product.fee
+              = @product.burden.name
           %tr
             %th 配送の方法
-            %td ヤマト
+            %td 
+              = @product.sending.name
           %tr
             %th 配送元地域
             %td 
               = link_to "#" do
-                = @product.area
+                = @product.prefecture.name
           %tr
             %th 配送の目安
             %td 
-              = @product.date
+              = @product.delivery.name
     .item-payment-box
       %span.item-payment-box__price
         = fa_icon "yen"
@@ -81,11 +84,17 @@
       %span.item-payment-box__tax (税込)
       %span.item-payment-box__shipping-fee 送料込み
 
-    - if user_signed_in? && current_user.id == @product.user_id
-      = link_to "商品を編集する", edit_product_path(@product.id,@product.product_images), class: "button"
-      = link_to "商品を削除する", product_path(@product.id), method: :delete, class: "button1"
-    - else
-      = link_to "購入画面に進む", purchase_product_path(@product.id), class: "button"
+
+
+    - if @product.status != 1
+      - if user_signed_in? && current_user.id == @product.user_id
+        = link_to "商品を編集する", edit_product_path, method: :get, class: "button"
+        = link_to "商品を削除する", product_path, method: :delete, class: "button1"
+      - else
+        = link_to "購入画面に進む", purchase_product_path(@product.id), class: "button"
+    - else 
+      = link_to "商品は売り切れました", "#", class: "button1"
+
 
     .item-description
       .item-description__content
@@ -138,7 +147,5 @@
         %a.social-media__icons--link{ href: "#", target: "_blank" }
           %i.fa.fa-pinterest.fa-2x
 
-  - breadcrumb :product
-  = render partial:"shared/breadcrumbs"
   = render 'shared/productsindexadvertisement'
   = render 'shared/productsindexfooter'

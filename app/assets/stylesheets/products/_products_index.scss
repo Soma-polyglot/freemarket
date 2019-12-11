@@ -145,6 +145,30 @@
                     position: absolute;
                     z-index: 2;
                   } 
+                  &__sold__box{
+                    z-index: 2;
+                    border-color: #ea352d transparent transparent transparent;
+                    position: absolute;
+                    border-width: 80px 80px 0 0;
+                    display: block;
+                    content: '';
+                    top: 0;
+                    left: 0;
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    color: white;
+                  }
+                  &__sold__text{
+                    z-index: 3;
+                    margin-left: 10px;
+                    margin-top: 20px;
+                    position: absolute;
+                    color: white;
+                    transform: rotate( -45deg );
+                    font-weight: 600;
+                    font-size: 15px;
+                  }
                 }
                 .index_image {
                   width: 188px;

@@ -59,7 +59,6 @@ class ProductsController < ApplicationController
   end
   
   def purchase
-    @user = User.find(params[:id])
     if @card.blank?
       redirect_to controller: "card", action: "new"
     else

@@ -52,7 +52,6 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    @product.product_images.build
   end
 
   def update
@@ -88,7 +87,9 @@ class ProductsController < ApplicationController
   end
 
   def product_params
+
     params.require(:product).permit(:name, :description, :category_id, :pattern_id, :brand_id, :condition_id, :burden_id, :prefecture_id, :sending_id, :price, :user_id, :delivery_id, product_images_attributes:[:image] ) .merge(user_id:current_user.id )
+
   end
    
   def set_product

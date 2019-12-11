@@ -1,6 +1,8 @@
 .body
 
   = render "shared/productsindexheader/" 
+  - breadcrumb :product
+  = render partial:"shared/breadcrumbs"
 
   .item-field
     .item-name
@@ -64,7 +66,8 @@
               = @product.fee
           %tr
             %th 配送の方法
-            %td ヤマト
+            %td 
+              = @product.method
           %tr
             %th 配送元地域
             %td 
@@ -137,7 +140,5 @@
         %a.social-media__icons--link{ href: "#", target: "_blank" }
           %i.fa.fa-pinterest.fa-2x
 
-  - breadcrumb :product
-  = render partial:"shared/breadcrumbs"
   = render 'shared/productsindexadvertisement'
   = render 'shared/productsindexfooter'

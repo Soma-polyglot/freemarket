@@ -76,6 +76,7 @@ class ProductsController < ApplicationController
     :customer => @card.customer_id, 
     :currency => 'jpy', 
   )
+  @product.update(status: 1)
   redirect_to root_path 
   end
 

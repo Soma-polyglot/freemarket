@@ -1,5 +1,24 @@
-.contents.row
-  .success
-    %h3
-      更新が完了しました。
-    %a.btn{:href => "/"} 投稿一覧へ戻る
+
+.updatebody
+  .top1
+    .top1__image
+      = link_to products_path do
+        = image_tag "/assets/fmarket_logo_red.svg", class: "icon"
+
+  .main1
+    .main1__line
+      .main1__line__contener
+        .main1__line__contener__head
+          更新が完了しました。
+          = link_to root_path, class: "path" do 
+            投稿一覧へ戻る
+            
+  .next
+  = render "signup/simple_footer"
+
+    
+
+        
+      
+
+          

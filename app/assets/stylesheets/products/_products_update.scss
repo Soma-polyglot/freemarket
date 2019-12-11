@@ -1,0 +1,58 @@
+.updatebody {
+  position: relative;
+  background: rgb(245, 245, 245);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
+    .top1 {
+      height: 128px;
+      text-align: center;
+      background: rgb(245, 245, 245);
+      &__image {
+        margin: 40px 0 0;
+        display: inline-block;
+        .icon {
+          width: 185px;
+          height: 49px;
+          line-height: 49px;
+        }
+      }
+    }
+    .main1 {
+      display: block;
+      &__line {
+        width: 700px;
+        margin: 0 auto;
+        background: #fff;
+        &__contener {
+          &__head {
+            padding: 32px 16px;
+            font-size: 22px;
+            line-height: 1.5;
+            text-align: center;
+            font-weight: bold;
+          }      
+          .path {
+            width: 45%;
+            margin: 24px auto 0;
+            margin-bottom: 24px;
+            background: #aaa;
+            border: 1px solid #aaa;
+            color: #fff;
+            display: block;
+            line-height: 48px;
+            font-size: 14px;
+            transition: all ease-out .3s;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+        }       
+      }
+    }
+  }
+  .next {
+    flex: 1;
+  }
+}

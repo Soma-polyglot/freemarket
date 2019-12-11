@@ -80,12 +80,14 @@
         = @product.price.to_s(:delimited)
       %span.item-payment-box__tax (税込)
       %span.item-payment-box__shipping-fee 送料込み
-
-    - if user_signed_in? && current_user.id == @product.user_id
-      = link_to "商品を編集する", edit_product_path, method: :get, class: "button"
-      = link_to "商品を削除する", product_path, method: :delete, class: "button1"
-    - else
-      = link_to "購入画面に進む", purchase_product_path(@product.id), class: "button"
+    - if @product.status != 1
+      - if user_signed_in? && current_user.id == @product.user_id
+        = link_to "商品を編集する", edit_product_path, method: :get, class: "button"
+        = link_to "商品を削除する", product_path, method: :delete, class: "button1"
+      - else
+        = link_to "購入画面に進む", purchase_product_path(@product.id), class: "button"
+    - else 
+      = link_to "商品は売り切れました", "#", class: "button1"
 
     .item-description
       .item-description__content

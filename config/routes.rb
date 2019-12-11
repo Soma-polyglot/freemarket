@@ -45,7 +45,7 @@ Rails.application.routes.draw do
   end
 
   resources :posts
-  resources :cards, only: [:new, :create, :edit]
+  resources :cards
   resources :signup, only: [:create] do
     collection do
       get 'signup_link'

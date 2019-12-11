@@ -61,17 +61,17 @@
                 サイズ
                 %sapn.require 必須
               .main__line__contener__item__detail__right__size-form
-                = f.collection_select :size, Pattern.all, :id, :name, prompt: "--", class: 'select-size'
+                = f.collection_select :pattern_id, Pattern.all, :id, :name, prompt: "--", class: 'select-size'
               .main__line__contener__item__detail__right__brand
                 ブランド
                 %sapn.require2 任意
               .main__line__contener__item__detail__right__brand-form
-                = f.text_field :brand_id, class: 'input-name', placeholder: "  例)シャネル"
+                = f.collection_select :brand_id, Brand.all, :id, :name, {}, class: 'select-category'
               .main__line__contener__item__detail__right__state
                 商品の状態
                 %sapn.require 必須
               .main__line__contener__item__detail__right__state-form
-                = f.collection_select :condition, Dondition.all, :id, :name, prompt: "--", class: 'select-state'
+                = f.collection_select :condition_id, Condition.all, :id, :name, prompt: "--", class: 'select-state'
 
           .main__line__contener__item__send.clearfix
             %h3.left 配送について
@@ -80,23 +80,23 @@
                 配送料の負担
                 %sapn.require 必須
               .main__line__contener__item__send__right__burden-form
-                = f.collection_select :fee, Burden.all, :id, :name, prompt: "--", class: 'select-burden'
+                = f.collection_select :burden_id, Burden.all, :id, :name, prompt: "--", class: 'select-burden'
               .main__line__contener__item__send__right__method
                 配送の方法
                 %sapn.require 必須
               .main__line__contener__item__send__right__method-form
-                = f.collection_select :method, Delivery.all, :id, :name, prompt: "--", class: 'select-burden'
+                = f.collection_select :delivery_id, Delivery.all, :id, :name, prompt: "--", class: 'select-burden'
               .main__line__contener__item__send__right__area
                 発送元の地域
                 %sapn.require 必須
               .main__line__contener__item__send__right__area-form
-                = f.collection_select :area, Prefecture.all, :id, :name, prompt: "--", class: 'select-area'
+                = f.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "--", class: 'select-area'
                 
               .main__line__contener__item__send__right__date
                 発送までの日数
                 %sapn.require 必須
               .main__line__contener__item__send__right__date-form
-                = f.collection_select :date, Sending.all, :id, :name, prompt: "--", class: 'select-date'
+                = f.collection_select :sending_id, Sending.all, :id, :name, prompt: "--", class: 'select-date'
           .main__line__contener__item__price.clearfix
             %h3.left 販売価格(300~9,999,999)
             .main__line__contener__item__price__right 

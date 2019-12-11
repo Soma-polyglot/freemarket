@@ -31,7 +31,8 @@ class ProductsController < ApplicationController
 
   end
 
-  def show    
+  def show
+    
   end
 
   def new

@@ -1,25 +1,29 @@
 .wrapper
   = render partial:"shared/productsindexheader"
   = render partial:"shared/breadcrumbs"
-  .wrapper2
+  .container
     %main.l--container
       .m--content
-        .chapter-head お支払い方法
+        %h2.chapter-head1 お支払い方法
         .single-inner
           .section
-            %h3.credit クレジットカード一覧
-            %ul.setting-pyment-list
-            .figure
-              %img.img{alt: "jcb", height: "20", src: "assets/images/jcb-card.png", width: "26"}/
-              %input.button.button-red{type:"submit", value:"削除する"}/
-            .settings-payment-num **** **** 4242
-            .settings-payment-num2 01 / 24
-            .buttons
+            .l-single-content
+              %h3.credit クレジットカード一覧
+              %ul.setting-pyment-list
+                %li
+                  %form.l-single-content
+                    .figure
+                      = image_tag "/assets/jcb-card.png",height: "30", width: "36",class: "image"
+                      %input.button.button-red{type:"submit", value:"削除する"}/
+                    .settings-payment-num **** **** 4242
+                    .settings-payment-num2 01 / 24
+            
           
           .buttons
-            =link_to "支払い方法について>", method: :get, class:"abc"
-
-        
+            = link_to "支払い方法について>", edit_card_path, class:"abc"
+          
+            
       .lside
         = render partial:"users/mypage-nav"
   = render partial:"shared/productsindexfooter"
+  = render partial: 'products/sell-btn'

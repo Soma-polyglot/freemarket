@@ -11,22 +11,22 @@ class ProductsController < ApplicationController
     @mens = Product.where(category_id: 2)
     @MENS = @mens.limit(10).order(created_at: :desc)
 
-    @camera = Product.where(category_id: 3)
+    @camera = Product.where(category_id: 8)
     @CAMERA = @camera.limit(10).order(created_at: :desc)
 
-    @toy = Product.where(category_id: 4)
+    @toy = Product.where(category_id: 6)
     @TOY = @toy.limit(10).order(created_at: :desc)
 
-    @chanel = Product.where(brand: 1)
+    @chanel = Product.where(brand: 2)
     @CHANEL = @chanel.limit(10).order(created_at: :desc)
 
-    @vuitton = Product.where(brand_id: 2)
+    @vuitton = Product.where(brand_id: 4)
     @VUITTON = @vuitton.limit(10).order(created_at: :desc)
 
-    @supreme = Product.where(brand_id: 3)
+    @supreme = Product.where(brand_id: 5)
     @SUPREME = @supreme.limit(10).order(created_at: :desc)
 
-    @nike = Product.where(brand_id: 4)
+    @nike = Product.where(brand_id: 7)
     @NIKE = @nike.limit(10).order(created_at: :desc)
 
   end

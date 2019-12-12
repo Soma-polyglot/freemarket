@@ -38,6 +38,7 @@
                   .second__flame__item__box__bottom__flame__line__image
                     - f.product_images.each do |image|
                       =image_tag "#{image.image}" , class: "index_image"
+                      
                     - if f.status == 1
                       .second__flame__item__box__bottom__flame__line__image__sold__box
                       .second__flame__item__box__bottom__flame__line__image__sold__text 
@@ -69,9 +70,18 @@
                   .second__flame__item__box__bottom__flame__line__image
                     - f.product_images.each do |image|
                       =image_tag "#{image.image}" , class: "index_image"
-                    .second__flame__item__box__bottom__flame__line__image__price
-                      ¥ 
-                      =f.price.to_s(:delimited)  
+                    
+                    - if f.status == 1
+                      .second__flame__item__box__bottom__flame__line__image__sold__box
+                      .second__flame__item__box__bottom__flame__line__image__sold__text 
+                        SOLD
+                      .second__flame__item__box__bottom__flame__line__image__price
+                        ¥ 
+                        =f.price.to_s(:delimited)
+                    - else
+                      .second__flame__item__box__bottom__flame__line__image__price
+                        ¥ 
+                        =f.price.to_s(:delimited)
                   
                   .second__flame__item__box__bottom__flame__line__detail
                     .second__flame__item__box__bottom__flame__line__detail__content
@@ -95,9 +105,17 @@
                     - f.product_images.each do |image|
                       =image_tag "#{image.image}" , class: "index_image"
 
-                    .second__flame__item__box__bottom__flame__line__image__price
-                      ¥ 
-                      =f.price.to_s(:delimited)  
+                    - if f.status == 1
+                      .second__flame__item__box__bottom__flame__line__image__sold__box
+                      .second__flame__item__box__bottom__flame__line__image__sold__text 
+                        SOLD
+                      .second__flame__item__box__bottom__flame__line__image__price
+                        ¥ 
+                        =f.price.to_s(:delimited)
+                    - else
+                      .second__flame__item__box__bottom__flame__line__image__price
+                        ¥ 
+                        =f.price.to_s(:delimited)
                   
                   .second__flame__item__box__bottom__flame__line__detail
                     .second__flame__item__box__bottom__flame__line__detail__content
@@ -121,9 +139,17 @@
                     - f.product_images.each do |image|
                       =image_tag "#{image.image}" , class: "index_image"
 
-                    .second__flame__item__box__bottom__flame__line__image__price
-                      ¥ 
-                      =f.price.to_s(:delimited) 
+                    - if f.status == 1
+                      .second__flame__item__box__bottom__flame__line__image__sold__box
+                      .second__flame__item__box__bottom__flame__line__image__sold__text 
+                        SOLD
+                      .second__flame__item__box__bottom__flame__line__image__price
+                        ¥ 
+                        =f.price.to_s(:delimited)
+                    - else
+                      .second__flame__item__box__bottom__flame__line__image__price
+                        ¥ 
+                        =f.price.to_s(:delimited)
                   
                   .second__flame__item__box__bottom__flame__line__detail
                     .second__flame__item__box__bottom__flame__line__detail__content
@@ -161,9 +187,17 @@
                     - f.product_images.each do |image|
                       =image_tag "#{image.image}" , class: "index_image"
 
-                    .second__flame__item__box__bottom__flame__line__image__price
-                      ¥ 
-                      =f.price.to_s(:delimited)
+                    - if f.status == 1
+                      .second__flame__item__box__bottom__flame__line__image__sold__box
+                      .second__flame__item__box__bottom__flame__line__image__sold__text 
+                        SOLD
+                      .second__flame__item__box__bottom__flame__line__image__price
+                        ¥ 
+                        =f.price.to_s(:delimited)
+                    - else
+                      .second__flame__item__box__bottom__flame__line__image__price
+                        ¥ 
+                        =f.price.to_s(:delimited)
                   
                   .second__flame__item__box__bottom__flame__line__detail
                     .second__flame__item__box__bottom__flame__line__detail__content
@@ -186,9 +220,17 @@
                     - f.product_images.each do |image|
                       =image_tag "#{image.image}" , class: "index_image"
 
-                    .second__flame__item__box__bottom__flame__line__image__price
-                      ¥ 
-                      =f.price.to_s(:delimited) 
+                    - if f.status == 1
+                      .second__flame__item__box__bottom__flame__line__image__sold__box
+                      .second__flame__item__box__bottom__flame__line__image__sold__text 
+                        SOLD
+                      .second__flame__item__box__bottom__flame__line__image__price
+                        ¥ 
+                        =f.price.to_s(:delimited)
+                    - else
+                      .second__flame__item__box__bottom__flame__line__image__price
+                        ¥ 
+                        =f.price.to_s(:delimited)
                   
                   .second__flame__item__box__bottom__flame__line__detail
                     .second__flame__item__box__bottom__flame__line__detail__content
@@ -212,9 +254,17 @@
                     - f.product_images.each do |image|
                       =image_tag "#{image.image}" , class: "index_image"
 
-                    .second__flame__item__box__bottom__flame__line__image__price
-                      ¥ 
-                      =f.price.to_s(:delimited)
+                    - if f.status == 1
+                      .second__flame__item__box__bottom__flame__line__image__sold__box
+                      .second__flame__item__box__bottom__flame__line__image__sold__text 
+                        SOLD
+                      .second__flame__item__box__bottom__flame__line__image__price
+                        ¥ 
+                        =f.price.to_s(:delimited)
+                    - else
+                      .second__flame__item__box__bottom__flame__line__image__price
+                        ¥ 
+                        =f.price.to_s(:delimited)
                     
                   .second__flame__item__box__bottom__flame__line__detail
                     .second__flame__item__box__bottom__flame__line__detail__content
@@ -236,10 +286,19 @@
                   .second__flame__item__box__bottom__flame__line__image
                     - f.product_images.each do |image|
                       =image_tag "#{image.image}" , class: "index_image"
-                    .second__flame__item__box__bottom__flame__line__image__price
-                      ¥ 
-                      =f.price.to_s(:delimited)  
-                  
+                    
+                    - if f.status == 1
+                      .second__flame__item__box__bottom__flame__line__image__sold__box
+                      .second__flame__item__box__bottom__flame__line__image__sold__text 
+                        SOLD
+                      .second__flame__item__box__bottom__flame__line__image__price
+                        ¥ 
+                        =f.price.to_s(:delimited)
+                    - else
+                      .second__flame__item__box__bottom__flame__line__image__price
+                        ¥ 
+                        =f.price.to_s(:delimited)
+
                   .second__flame__item__box__bottom__flame__line__detail
                     .second__flame__item__box__bottom__flame__line__detail__content
                       =simple_format(f.name)

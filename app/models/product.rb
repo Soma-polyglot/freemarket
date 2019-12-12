@@ -6,7 +6,7 @@ class Product < ApplicationRecord
   belongs_to :brand
   belongs_to :category
   belongs_to :user
-  # validates :product_images, length > 1
+  # validates :product_images, 
   accepts_nested_attributes_for :product_images
 
 

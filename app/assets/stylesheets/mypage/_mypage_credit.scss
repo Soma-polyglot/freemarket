@@ -7,11 +7,11 @@ body {
   font-size: 0.8rem;
 }
 
-/* .container {
+.container {
   width: 1020px;
   height: 1252px;
   font-size: 14px;
-} */
+} 
 
 .m--content {
   float: right;
@@ -19,7 +19,7 @@ body {
   
 }
 
-.chapter-head {
+.chapter-head1 {
   width: 700px;
   height: 50px;
   padding: 8px, 24px;
@@ -28,14 +28,32 @@ body {
   line-height: 1.4;
   display: block;
   font-size: 1.5em;
-  margin-block-start: 0.83em;
-  margin-block-end: 0.83em;
   margin-inline-start: 0px;
   margin-inline-end: 0px;
   font-weight: bold;
+  padding: 10px;
 }
 
+.single-inner {
+  height: 318.09px;
+  width: 700px;
+  font: 14px;
+  background-color: #ffffff;
+  padding: 64px;
+  color: #333;
+}
+
+.section {
+  height: 133px;
+  width: 572px;
+}
+
+.l-single-content {
+  height: 16px;
+  width: 320px;
+}
 .credit {
+  width: 320px;
   margin: 50px;
   font-size: 16px;
   display: block;
@@ -49,16 +67,19 @@ body {
 .setting-payment-list {
   list-style: none;
   float: left;
-}
-
-.li {
   height: 117px;
   width: 572px;
-  font: 14px;
-  padding: 24px, 0px;
-  border-style: solid;
-  border-width: 0;
 }
+
+  li {
+    height: 117px;
+    width: 572px;
+    font: 14px;
+    padding: 24px, 0px;
+    border-style: solid;
+    border-width: 0;
+    border-bottom: 1px solid #eee;
+  }
 
 .figure {
   height: 20px;
@@ -66,23 +87,25 @@ body {
   font: 14px;
 }
 
-.img {
+.image {
   vertical-align: middle;
+  margin: 0px;
 }
 
 .settings-payment-num {
+  width: 320px;
   margin-bottom: 50px;
-  margin: 8px 0 0;
+  margin: 16px 0 0;
   font-size: 16px;
   color: #333333;
 }
 
 .settings-payment-num2 {
+  width: 320px;
   margin-bottom: 50px;
-  margin: 8px 0;
+  margin: 16px 0;
   font-size: 16px;
   color: #333333;
-  border-bottom: 1px solid #f5f5f5;
 }
 
 .buttons {
@@ -94,12 +117,13 @@ body {
 }
 
 .button-red {
-  margin: 0px 0px 0px 450px;
+  // margin: 0px 0px 0px 400px;
   height: 28px;
   width: 70px;
   font: 14px;
   // position: absolute;
   // top: 0;
+  right: 0;
   bottom: 0;
   padding: 4px 6px;
   background: #fff;
@@ -108,13 +132,14 @@ body {
   color: #ea352d;
   text-decoration: none;
   cursor: pointer;
+  float: right;
+  margin-right: auto;
 }
 
-.single-inner {
-  height: 318.09px;
-  width: 700px;
+.abc {
+  height:16.09px;
+  width:572px;
+  color: #0099E8;
   font: 14px;
-  background-color: #ffffff;
-  padding: 64px;
-  color: #333;
+  cursor: pointer;
 }

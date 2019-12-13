@@ -5,7 +5,7 @@
     .top
       .top__image
         = link_to products_path do
-          = image_tag "/assets/fmarket_logo_red.svg", class: "icon"
+          = image_tag "fmarket_logo_red.svg", class: "icon"
 
     .main
       .main__line
@@ -66,7 +66,7 @@
                 ブランド
                 %sapn.require2 任意
               .main__line__contener__item__detail__right__brand-form
-                = f.text_field :brand_id, class: 'input-name', placeholder: "  例)シャネル"
+                = f.collection_select :brand_id, Brand.all, :id, :name, {}, class: 'select-category'
               .main__line__contener__item__detail__right__state
                 商品の状態
                 %sapn.require 必須
